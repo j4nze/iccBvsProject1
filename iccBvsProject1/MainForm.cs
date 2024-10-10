@@ -1,4 +1,5 @@
-﻿using iccBvsProject1.Views;
+﻿using iccBvsProject1.Controllers;
+using iccBvsProject1.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,6 @@ namespace iccBvsProject1
 {
     public partial class MainForm : Form
     {
-
         public MainForm()
         {
             InitializeComponent();
@@ -23,21 +23,20 @@ namespace iccBvsProject1
 
         private void InitializeUserControls()
         {
-            ucVideoLib.Visible = false;
-            ucCustomerLib.Visible = false;
+            ucVideoLibrary.Visible = false;
+            ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
         }
 
         private void HideAllUserControls()
         {
-            ucVideoLib.Visible = false;
-            ucCustomerLib.Visible = false;
+            ucVideoLibrary.Visible = false;
+            ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
         }
 
         private void ShowUserControl(UserControl uc)
         {
-            // Hide all user controls
             HideAllUserControls();
             uc.Visible = true;   
         }
@@ -49,23 +48,26 @@ namespace iccBvsProject1
 
         private void videoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowUserControl(ucVideoLib);
+            ShowUserControl(ucVideoLibrary);
+            labelBreadCrumbHeader.Text = "Video Library";
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowUserControl(ucCustomerLib);
+            ShowUserControl(ucCustomerLibrary);
+            labelBreadCrumbHeader.Text = "Customer Library";
         }
 
         private void buttonRental_Click(object sender, EventArgs e)
         {
             ShowUserControl(ucRental);
+            labelBreadCrumbHeader.Text = "Rental Records";
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
             HideAllUserControls();
+            labelBreadCrumbHeader.Text = "Dashboard";
         }
-
     }
 }
