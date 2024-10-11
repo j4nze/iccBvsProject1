@@ -26,7 +26,7 @@ namespace iccBvsProject1.Views
             InitializeComponent();
 
             comboBoxFormat.SelectedIndex = 0;
-            comboBoxNewInOperation.SelectedIndex = 0;
+            comboBoxNewQtyOperation.SelectedIndex = 0;
             comboBoxSearchBy.SelectedIndex = 0;
 
             dt = vc.RetrieveAll();
@@ -112,10 +112,11 @@ namespace iccBvsProject1.Views
         private void buttonSubmitStockQtyOperation_Click(object sender, EventArgs e)
         {
             vm.Id = textBoxId.Text;
-            vm.NewInOperation = comboBoxNewInOperation.SelectedIndex;
-            vm.NewInQty = (int)numericUpDownNewInQty.Value;
+            vm.NewInOperation = comboBoxNewQtyOperation.SelectedIndex;
+            vm.NewInQty = (int)numericUpDownNewQty.Value;
             vm.InQty = (int)numericUpDownInQty.Value;
             vm.TotalQty = (int)numericUpDownTotalQty.Value;
+
             vc.UpdateQty(vm);
 
             dt.Clear();
@@ -133,6 +134,7 @@ namespace iccBvsProject1.Views
             vm.Price = (int)numericUpDownRentPrice.Value;
             vm.Format = comboBoxFormat.Text;
             vm.Synopsis = textBoxSynopsis.Text;
+
             vc.Update(vm);
 
             dt.Clear();

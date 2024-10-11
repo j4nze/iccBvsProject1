@@ -16,10 +16,12 @@ namespace iccBvsProject1.Controllers
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand command = new SqlCommand("SELECT * FROM Video", conn))
+                    // 7. SQL Introduction
+                    // Context #8: SQL Select Statement
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Video", conn))
                     {
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        adapter.Fill(dt);
+                        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                        adp.Fill(dt);
                     }
                 }
             }
@@ -38,15 +40,17 @@ namespace iccBvsProject1.Controllers
                 {
                     conn.Open();
                     string query = "";
+                    // 7. SQL Introduction
+                    // Context #8: SQL Select Statement (with Comparison Operator (=) and Logical Operator (LIKE))
                     if (vm.SearchBy == 0) query = "SELECT * FROM Video WHERE video_id LIKE @SearchValue";
 
                     if (vm.SearchBy == 1) query = "SELECT * FROM Video WHERE title LIKE @SearchValue";
 
-                    using (SqlCommand command = new SqlCommand(query, conn))
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("@SearchValue", "%" + vm.SearchByValue + "%");
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        adapter.Fill(dt);
+                        cmd.Parameters.AddWithValue("@SearchValue", "%" + vm.SearchByValue + "%");
+                        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                        adp.Fill(dt);
                     }
                 }
 
@@ -66,21 +70,23 @@ namespace iccBvsProject1.Controllers
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand command = new SqlCommand("INSERT INTO Video VALUES (@Id, @Title, @Director, @Release, @RentLimit, @Price, @Format, @TotalQty, @InQty, @OutQty, @Synopsis)", conn))
+                    // 7. SQL Introduction
+                    // Context #9: SQL Insert Statement (Without specifying column name)
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Video VALUES (@Id, @Title, @Director, @Release, @RentLimit, @Price, @Format, @TotalQty, @InQty, @OutQty, @Synopsis)", conn))
                     {
-                        command.Parameters.AddWithValue("@Id", vm.Id);
-                        command.Parameters.AddWithValue("@Title", vm.Title);
-                        command.Parameters.AddWithValue("@Director", vm.Director);
-                        command.Parameters.AddWithValue("@Release", vm.Release);
-                        command.Parameters.AddWithValue("@RentLimit", vm.RentLimit);
-                        command.Parameters.AddWithValue("@Price", vm.Price);
-                        command.Parameters.AddWithValue("@Format", vm.Format);
-                        command.Parameters.AddWithValue("@TotalQty", vm.TotalQty);
-                        command.Parameters.AddWithValue("@InQty", vm.InQty);
-                        command.Parameters.AddWithValue("@OutQty", vm.OutQty);
-                        command.Parameters.AddWithValue("@Synopsis", vm.Synopsis);
+                        cmd.Parameters.AddWithValue("@Id", vm.Id);
+                        cmd.Parameters.AddWithValue("@Title", vm.Title);
+                        cmd.Parameters.AddWithValue("@Director", vm.Director);
+                        cmd.Parameters.AddWithValue("@Release", vm.Release);
+                        cmd.Parameters.AddWithValue("@RentLimit", vm.RentLimit);
+                        cmd.Parameters.AddWithValue("@Price", vm.Price);
+                        cmd.Parameters.AddWithValue("@Format", vm.Format);
+                        cmd.Parameters.AddWithValue("@TotalQty", vm.TotalQty);
+                        cmd.Parameters.AddWithValue("@InQty", vm.InQty);
+                        cmd.Parameters.AddWithValue("@OutQty", vm.OutQty);
+                        cmd.Parameters.AddWithValue("@Synopsis", vm.Synopsis);
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0) MessageBox.Show("Success");
                         else MessageBox.Show("Failed");
@@ -99,18 +105,20 @@ namespace iccBvsProject1.Controllers
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand command = new SqlCommand("UPDATE Video SET title = @Title, director = @Director, release_date = @Release, rent_limit = @RentLimit, price = @Price, format = @Format, synopsis = @Synopsis WHERE video_id = @Id", conn))
+                    // 7. SQL Introduction
+                    // Context #10: SQL Update Statement (multiple)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET title = @Title, director = @Director, release_date = @Release, rent_limit = @RentLimit, price = @Price, format = @Format, synopsis = @Synopsis WHERE video_id = @Id", conn))
                     {
-                        command.Parameters.AddWithValue("@Id", vm.Id);
-                        command.Parameters.AddWithValue("@Title", vm.Title);
-                        command.Parameters.AddWithValue("@Director", vm.Director);
-                        command.Parameters.AddWithValue("@Release", vm.Release);
-                        command.Parameters.AddWithValue("@RentLimit", vm.RentLimit);
-                        command.Parameters.AddWithValue("@Price", vm.Price);
-                        command.Parameters.AddWithValue("@Format", vm.Format);
-                        command.Parameters.AddWithValue("@Synopsis", vm.Synopsis);
+                        cmd.Parameters.AddWithValue("@Id", vm.Id);
+                        cmd.Parameters.AddWithValue("@Title", vm.Title);
+                        cmd.Parameters.AddWithValue("@Director", vm.Director);
+                        cmd.Parameters.AddWithValue("@Release", vm.Release);
+                        cmd.Parameters.AddWithValue("@RentLimit", vm.RentLimit);
+                        cmd.Parameters.AddWithValue("@Price", vm.Price);
+                        cmd.Parameters.AddWithValue("@Format", vm.Format);
+                        cmd.Parameters.AddWithValue("@Synopsis", vm.Synopsis);
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0) MessageBox.Show("Success");
                         else MessageBox.Show("Failed");
@@ -146,14 +154,15 @@ namespace iccBvsProject1.Controllers
                         vm.InQty -= vm.NewInQty;
                         vm.TotalQty -= vm.NewInQty;
                     }
-
-                    using (SqlCommand command = new SqlCommand("UPDATE Video SET total_qty = @TotalQty , in_qty = @InQty WHERE video_id = @Id", conn))
+                    // 7. SQL Introduction
+                    // Context #10: SQL Update Statement (multiple)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET total_qty = @TotalQty , in_qty = @InQty WHERE video_id = @Id", conn))
                     {
-                        command.Parameters.AddWithValue("@Id", vm.Id);
-                        command.Parameters.AddWithValue("@TotalQty", vm.TotalQty);
-                        command.Parameters.AddWithValue("@InQty", vm.InQty);
+                        cmd.Parameters.AddWithValue("@Id", vm.Id);
+                        cmd.Parameters.AddWithValue("@TotalQty", vm.TotalQty);
+                        cmd.Parameters.AddWithValue("@InQty", vm.InQty);
 
-                        int rowsAffected = command.ExecuteNonQuery();
+                        int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0) MessageBox.Show("Success");
                         else MessageBox.Show("Failed");
@@ -172,6 +181,8 @@ namespace iccBvsProject1.Controllers
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
+                    // 7. SQL Introduction
+                    // Context #11: SQL Delete Statement (single)
                     using (SqlCommand command = new SqlCommand("DELETE FROM Video WHERE video_id = @Id", conn))
                     {
                         command.Parameters.AddWithValue("@Id", vm.Id);
