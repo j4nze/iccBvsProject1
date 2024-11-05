@@ -18,9 +18,12 @@ namespace iccBvsProject1.Views
         CustomerModel cm = new CustomerModel();
         CustomerController cc = new CustomerController();
         DataTable dt;
+
         public UserControlCustomerLibrary()
         {
             InitializeComponent();
+
+            comboBoxSearchBy.SelectedIndex = 0;
 
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
@@ -55,7 +58,7 @@ namespace iccBvsProject1.Views
             cc.Create(cm);
 
             dt.Clear();
-            dt = cc.RetrieveSpecific(cm);
+            dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
         }
 
@@ -70,7 +73,7 @@ namespace iccBvsProject1.Views
             cc.Update(cm);
 
             dt.Clear();
-            dt = cc.RetrieveSpecific(cm);
+            dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
         }
 
@@ -81,8 +84,22 @@ namespace iccBvsProject1.Views
             cc.Delete(cm);
 
             dt.Clear();
-            dt = cc.RetrieveSpecific(cm);
+            dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
+        }
+
+        private void dataGridViewCustomerLibrary_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewCustomerLibrary.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewCustomerLibrary.SelectedRows[0];
+
+                textBoxId.Text = selectedRow.Cells["customer_id"].Value.ToString();
+                textBoxName.Text = selectedRow.Cells["name"].Value.ToString();
+                textBoxMobile.Text = selectedRow.Cells["mobile"].Value.ToString();
+                textBoxEmail.Text = selectedRow.Cells["email"].Value.ToString();
+                textBoxAddress.Text = selectedRow.Cells["Address"].Value.ToString();
+            }
         }
     }
 }

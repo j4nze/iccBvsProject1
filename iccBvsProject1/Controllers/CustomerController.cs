@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace iccBvsProject1.Controllers
@@ -37,6 +38,41 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
+        public List<ComboBoxItem> RetrieveAllNames()
+        {
+            var list = new List<ComboBoxItem>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+                    // 7. SQL Introduction
+                    // Context #8: SQL Select Statement
+                    using (SqlCommand cmd = new SqlCommand("SELECT customer_id, name FROM Customer", conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Retrieve values directly from the reader and add to the list
+                                string id = reader["customer_id"].ToString();
+                                string name = reader["name"].ToString();
+                                string displayText = $"[{id}] {name}";
+
+                                list.Add(new ComboBoxItem(id, displayText));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return list;
+        }
         public DataTable RetrieveSpecific(CustomerModel cm)
         {
             try
@@ -47,9 +83,9 @@ namespace iccBvsProject1.Controllers
                     string query = "";
                     // 7. SQL Introduction
                     // Context #8: SQL Select Statement (with Comparison Operator (=) and Logical Operator (LIKE))
-                    if (cm.SearchBy == 0) query = "SELECT * FROM Video WHERE customer_id LIKE @SearchValue";
+                    if (cm.SearchBy == 0) query = "SELECT * FROM Customer WHERE customer_id LIKE @SearchValue";
 
-                    if (cm.SearchBy == 1) query = "SELECT * FROM Video WHERE full_name LIKE @SearchValue";
+                    if (cm.SearchBy == 1) query = "SELECT * FROM Customer WHERE name LIKE @SearchValue";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -106,7 +142,7 @@ namespace iccBvsProject1.Controllers
                     conn.Open();
                     // 7. SQL Introduction
                     // Context #10: SQL Update Statement (multiple)
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Customer SET full_name = @name, mobile = @Mobile, email = @Email, address = @Address WHERE customer_id = @Id", conn))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Customer SET name = @name, mobile = @Mobile, email = @Email, address = @Address WHERE customer_id = @Id", conn))
                     {
                         cmd.Parameters.AddWithValue("@Id", cm.Id);
                         cmd.Parameters.AddWithValue("@Name", cm.Name);
@@ -152,4 +188,22 @@ namespace iccBvsProject1.Controllers
             }
         }
     }
+
+    public class ComboBoxItem
+    {
+        public string Id { get; set; }
+        public string DisplayText { get; set; }
+
+        public ComboBoxItem(string id, string displayText)
+        {
+            Id = id;
+            DisplayText = displayText;
+        }
+
+        public override string ToString()
+        {
+            return DisplayText;
+        }
+    }
+
 }

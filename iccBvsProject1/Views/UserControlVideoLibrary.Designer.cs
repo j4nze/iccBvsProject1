@@ -36,10 +36,13 @@
             this.buttonRetrieveSpecific = new System.Windows.Forms.Button();
             this.buttonRetrieveAll = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownRentLimit = new System.Windows.Forms.NumericUpDown();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDownRentPrice = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownRentLimit = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
+            this.comboBoxFormat = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -47,14 +50,12 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericUpDownOutQty = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownInQty = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTotalQty = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxFormat = new System.Windows.Forms.ComboBox();
+            this.numericUpDownInQty = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.dateTimePickerReleaseDate = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,25 +65,24 @@
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.buttonSubmitNewQty = new System.Windows.Forms.Button();
-            this.numericUpDownNewQty = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBoxNewQtyOperation = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDownNewQty = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxNewQtyOperation = new System.Windows.Forms.ComboBox();
             this.textBoxVideoIdNewIn = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVideoLibrary)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutQty)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotalQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInQty)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNewQty)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -210,28 +210,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DETAILS";
             // 
-            // numericUpDownRentLimit
+            // groupBox5
             // 
-            this.numericUpDownRentLimit.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownRentLimit.Location = new System.Drawing.Point(240, 31);
-            this.numericUpDownRentLimit.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDownRentLimit.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownRentLimit.Name = "numericUpDownRentLimit";
-            this.numericUpDownRentLimit.Size = new System.Drawing.Size(200, 30);
-            this.numericUpDownRentLimit.TabIndex = 35;
-            this.numericUpDownRentLimit.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.groupBox5.AutoSize = true;
+            this.groupBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox5.Controls.Add(this.label15);
+            this.groupBox5.Controls.Add(this.numericUpDownRentPrice);
+            this.groupBox5.Controls.Add(this.numericUpDownRentLimit);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.comboBoxFormat);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
+            this.groupBox5.Location = new System.Drawing.Point(386, 180);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox5.Size = new System.Drawing.Size(448, 164);
+            this.groupBox5.TabIndex = 36;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rental";
             // 
             // label15
             // 
@@ -256,6 +252,29 @@
             0,
             0});
             // 
+            // numericUpDownRentLimit
+            // 
+            this.numericUpDownRentLimit.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownRentLimit.Location = new System.Drawing.Point(240, 31);
+            this.numericUpDownRentLimit.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDownRentLimit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownRentLimit.Name = "numericUpDownRentLimit";
+            this.numericUpDownRentLimit.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownRentLimit.TabIndex = 35;
+            this.numericUpDownRentLimit.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -265,6 +284,30 @@
             this.label14.Size = new System.Drawing.Size(70, 23);
             this.label14.TabIndex = 26;
             this.label14.Text = "Price";
+            // 
+            // comboBoxFormat
+            // 
+            this.comboBoxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFormat.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFormat.FormattingEnabled = true;
+            this.comboBoxFormat.Items.AddRange(new object[] {
+            "VCD",
+            "DVD"});
+            this.comboBoxFormat.Location = new System.Drawing.Point(240, 67);
+            this.comboBoxFormat.Name = "comboBoxFormat";
+            this.comboBoxFormat.Size = new System.Drawing.Size(200, 30);
+            this.comboBoxFormat.TabIndex = 21;
+            this.comboBoxFormat.SelectedIndexChanged += new System.EventHandler(this.comboBoxVideoFormat_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 23);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Format";
             // 
             // buttonCreate
             // 
@@ -356,15 +399,6 @@
             this.numericUpDownOutQty.Size = new System.Drawing.Size(150, 30);
             this.numericUpDownOutQty.TabIndex = 32;
             // 
-            // numericUpDownInQty
-            // 
-            this.numericUpDownInQty.Enabled = false;
-            this.numericUpDownInQty.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownInQty.Location = new System.Drawing.Point(89, 67);
-            this.numericUpDownInQty.Name = "numericUpDownInQty";
-            this.numericUpDownInQty.Size = new System.Drawing.Size(150, 30);
-            this.numericUpDownInQty.TabIndex = 31;
-            // 
             // numericUpDownTotalQty
             // 
             this.numericUpDownTotalQty.Enabled = false;
@@ -384,16 +418,6 @@
             this.label10.TabIndex = 28;
             this.label10.Text = "Out";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 23);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "In";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -404,19 +428,24 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Total";
             // 
-            // comboBoxFormat
+            // numericUpDownInQty
             // 
-            this.comboBoxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFormat.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxFormat.FormattingEnabled = true;
-            this.comboBoxFormat.Items.AddRange(new object[] {
-            "VCD",
-            "DVD"});
-            this.comboBoxFormat.Location = new System.Drawing.Point(240, 67);
-            this.comboBoxFormat.Name = "comboBoxFormat";
-            this.comboBoxFormat.Size = new System.Drawing.Size(200, 30);
-            this.comboBoxFormat.TabIndex = 21;
-            this.comboBoxFormat.SelectedIndexChanged += new System.EventHandler(this.comboBoxVideoFormat_SelectedIndexChanged);
+            this.numericUpDownInQty.Enabled = false;
+            this.numericUpDownInQty.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownInQty.Location = new System.Drawing.Point(89, 67);
+            this.numericUpDownInQty.Name = "numericUpDownInQty";
+            this.numericUpDownInQty.Size = new System.Drawing.Size(150, 30);
+            this.numericUpDownInQty.TabIndex = 31;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 23);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "In";
             // 
             // dateTimePickerReleaseDate
             // 
@@ -426,16 +455,6 @@
             this.dateTimePickerReleaseDate.Name = "dateTimePickerReleaseDate";
             this.dateTimePickerReleaseDate.Size = new System.Drawing.Size(661, 30);
             this.dateTimePickerReleaseDate.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 70);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Format";
             // 
             // label5
             // 
@@ -538,6 +557,26 @@
             this.buttonSubmitNewQty.UseVisualStyleBackColor = false;
             this.buttonSubmitNewQty.Click += new System.EventHandler(this.buttonSubmitStockQtyOperation_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(715, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 23);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Qty";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(409, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(118, 23);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Operation";
+            // 
             // numericUpDownNewQty
             // 
             this.numericUpDownNewQty.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -556,15 +595,15 @@
             0,
             0});
             // 
-            // label13
+            // label1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(715, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 23);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Qty";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "ID";
             // 
             // comboBoxNewQtyOperation
             // 
@@ -579,26 +618,6 @@
             this.comboBoxNewQtyOperation.Size = new System.Drawing.Size(176, 30);
             this.comboBoxNewQtyOperation.TabIndex = 26;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(409, 39);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 23);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Operation";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 23);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "ID";
-            // 
             // textBoxVideoIdNewIn
             // 
             this.textBoxVideoIdNewIn.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -607,25 +626,6 @@
             this.textBoxVideoIdNewIn.ReadOnly = true;
             this.textBoxVideoIdNewIn.Size = new System.Drawing.Size(350, 30);
             this.textBoxVideoIdNewIn.TabIndex = 16;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.AutoSize = true;
-            this.groupBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.numericUpDownRentPrice);
-            this.groupBox5.Controls.Add(this.numericUpDownRentLimit);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.comboBoxFormat);
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox5.Location = new System.Drawing.Point(386, 180);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox5.Size = new System.Drawing.Size(448, 164);
-            this.groupBox5.TabIndex = 36;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Rental";
             // 
             // UserControlVideoLibrary
             // 
@@ -645,18 +645,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVideoLibrary)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOutQty)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotalQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInQty)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNewQty)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,27 +668,16 @@
         private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonRetrieveSpecific;
         private System.Windows.Forms.Button buttonRetrieveAll;
-        private System.Windows.Forms.TextBox textBoxDirector;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePickerReleaseDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxSynopsis;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxFormat;
-        private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.NumericUpDown numericUpDownOutQty;
-        private System.Windows.Forms.NumericUpDown numericUpDownInQty;
-        private System.Windows.Forms.NumericUpDown numericUpDownTotalQty;
         private System.Windows.Forms.DataGridView dataGridViewVideoLibrary;
         private System.Windows.Forms.TextBox textBoxSearchValue;
         private System.Windows.Forms.Label label11;
@@ -706,5 +695,16 @@
         private System.Windows.Forms.NumericUpDown numericUpDownRentPrice;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown numericUpDownOutQty;
+        private System.Windows.Forms.NumericUpDown numericUpDownTotalQty;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownInQty;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxDirector;
     }
 }

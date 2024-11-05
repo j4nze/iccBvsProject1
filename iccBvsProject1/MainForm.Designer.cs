@@ -94,7 +94,7 @@
             this.contextMenuStripLibrary.Name = "contextMenuStrip1";
             this.contextMenuStripLibrary.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.contextMenuStripLibrary.ShowImageMargin = false;
-            this.contextMenuStripLibrary.Size = new System.Drawing.Size(186, 84);
+            this.contextMenuStripLibrary.Size = new System.Drawing.Size(152, 56);
             // 
             // videoToolStripMenuItem
             // 
@@ -102,7 +102,7 @@
             this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
             this.videoToolStripMenuItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.AsNeeded;
             this.videoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.videoToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.videoToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.videoToolStripMenuItem.Text = "VIDEO";
             this.videoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.videoToolStripMenuItem.Click += new System.EventHandler(this.videoToolStripMenuItem_Click);
@@ -113,7 +113,7 @@
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
             this.customerToolStripMenuItem.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.customerToolStripMenuItem.Text = "CUSTOMER";
             this.customerToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
@@ -213,6 +213,7 @@
             // 
             // ucRental
             // 
+            this.ucRental.AutoScroll = true;
             this.ucRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.ucRental.Location = new System.Drawing.Point(300, 75);
             this.ucRental.Name = "ucRental";

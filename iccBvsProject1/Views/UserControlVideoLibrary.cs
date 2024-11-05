@@ -19,8 +19,6 @@ namespace iccBvsProject1.Views
         VideoController vc = new VideoController();
         DataTable dt;
 
-        static string searchId, searchName;
-
         public UserControlVideoLibrary()
         {
             InitializeComponent();
