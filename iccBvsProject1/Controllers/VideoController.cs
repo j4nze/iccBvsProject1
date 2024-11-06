@@ -1,5 +1,6 @@
 ﻿using iccBvsProject1.Models;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -32,6 +33,7 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
+        
         public DataTable RetrieveSpecific(VideoModel vm)
         {
             try
@@ -63,6 +65,44 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
+        
+        public List<Models.VideoTitleComboBoxItem> RetrieveAllTitles()
+        {
+            var list = new List<Models.VideoTitleComboBoxItem>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+                    // 7. SQL Introduction
+                    // Context #8: SQL Select Statement
+                    using (SqlCommand cmd = new SqlCommand("SELECT video_id, title, format, rent_limit, price FROM Video ORDER BY title", conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string id = reader["video_id"].ToString();
+                                string title = reader["title"].ToString();
+                                int rentLimit = Convert.ToInt32(reader["rent_limit"].ToString());
+                                int price = Convert.ToInt32(reader["price"].ToString());
+                                string format = reader["format"].ToString();
+
+                                list.Add(new Models.VideoTitleComboBoxItem(id, title, rentLimit, price, format));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return list;
+        }
+        
         public void Create(VideoModel vm)
         {
             try
@@ -98,6 +138,7 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
+        
         public void Update(VideoModel vm)
         {
             try
@@ -130,6 +171,7 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
+        
         public void UpdateQty(VideoModel vm)
         {
             try
@@ -174,6 +216,7 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
+        
         public void Delete(VideoModel vm)
         {
             try

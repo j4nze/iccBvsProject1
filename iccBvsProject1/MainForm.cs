@@ -17,8 +17,10 @@ namespace iccBvsProject1
         public MainForm()
         {
             InitializeComponent();
-
             InitializeUserControls();
+
+            ucVideoLibrary.UCR = ucRental;  // enable ucVideoLibrary to have access (ex. calling methods) in the ucRental
+            ucCustomerLibrary.UCR = ucRental;   // enable ucCustomerLibrary to have access (ex. calling methods) in the ucRental
         }
 
         private void InitializeUserControls()

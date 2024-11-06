@@ -15,9 +15,10 @@ namespace iccBvsProject1.Views
 {
     public partial class UserControlCustomerLibrary : UserControl
     {
-        CustomerModel cm = new CustomerModel();
-        CustomerController cc = new CustomerController();
-        DataTable dt;
+        public UserControlRental UCR { get; set; }  // holds reference from this uc
+        private CustomerModel cm = new CustomerModel();
+        private CustomerController cc = new CustomerController();
+        private DataTable dt;
 
         public UserControlCustomerLibrary()
         {
@@ -27,6 +28,20 @@ namespace iccBvsProject1.Views
 
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
+        }
+
+        private void dataGridViewCustomerLibrary_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewCustomerLibrary.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewCustomerLibrary.SelectedRows[0];
+
+                textBoxId.Text = selectedRow.Cells["customer_id"].Value.ToString();
+                textBoxName.Text = selectedRow.Cells["name"].Value.ToString();
+                textBoxMobile.Text = selectedRow.Cells["mobile"].Value.ToString();
+                textBoxEmail.Text = selectedRow.Cells["email"].Value.ToString();
+                textBoxAddress.Text = selectedRow.Cells["Address"].Value.ToString();
+            }
         }
 
         private void buttonRetrieveAll_Click(object sender, EventArgs e)
@@ -60,6 +75,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
+
+            UCR.LoadCustomerCombobox();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -75,6 +92,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
+
+            UCR.LoadCustomerCombobox();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -86,20 +105,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
-        }
 
-        private void dataGridViewCustomerLibrary_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridViewCustomerLibrary.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dataGridViewCustomerLibrary.SelectedRows[0];
-
-                textBoxId.Text = selectedRow.Cells["customer_id"].Value.ToString();
-                textBoxName.Text = selectedRow.Cells["name"].Value.ToString();
-                textBoxMobile.Text = selectedRow.Cells["mobile"].Value.ToString();
-                textBoxEmail.Text = selectedRow.Cells["email"].Value.ToString();
-                textBoxAddress.Text = selectedRow.Cells["Address"].Value.ToString();
-            }
+            UCR.LoadCustomerCombobox();
         }
     }
 }

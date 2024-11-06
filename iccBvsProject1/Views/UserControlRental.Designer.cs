@@ -29,13 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewCustomerLibrary = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRental = new System.Windows.Forms.DataGridView();
             this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
             this.textBoxSearchValue = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.buttonRetrieveSpecific = new System.Windows.Forms.Button();
             this.buttonRetrieveAll = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownOverdueDayCount = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTotalPrice = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownOverduePrice = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerRentalDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -55,38 +65,28 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxNotes = new System.Windows.Forms.TextBox();
             this.buttonRent = new System.Windows.Forms.Button();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxRentalId = new System.Windows.Forms.TextBox();
-            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxStatus = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numericUpDownOverduePrice = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownTotal = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownOverdueDayCount = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomerLibrary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverdueDayCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotalPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverduePrice)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverduePrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverdueDayCount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.dataGridViewCustomerLibrary);
+            this.groupBox1.Controls.Add(this.dataGridViewRental);
             this.groupBox1.Controls.Add(this.comboBoxSearchBy);
             this.groupBox1.Controls.Add(this.textBoxSearchValue);
             this.groupBox1.Controls.Add(this.label11);
@@ -102,20 +102,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LIST";
             // 
-            // dataGridViewCustomerLibrary
+            // dataGridViewRental
             // 
-            this.dataGridViewCustomerLibrary.AllowUserToAddRows = false;
-            this.dataGridViewCustomerLibrary.AllowUserToDeleteRows = false;
-            this.dataGridViewCustomerLibrary.AllowUserToOrderColumns = true;
-            this.dataGridViewCustomerLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomerLibrary.Location = new System.Drawing.Point(6, 72);
-            this.dataGridViewCustomerLibrary.Name = "dataGridViewCustomerLibrary";
-            this.dataGridViewCustomerLibrary.ReadOnly = true;
-            this.dataGridViewCustomerLibrary.RowHeadersWidth = 51;
-            this.dataGridViewCustomerLibrary.RowTemplate.Height = 24;
-            this.dataGridViewCustomerLibrary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustomerLibrary.Size = new System.Drawing.Size(964, 300);
-            this.dataGridViewCustomerLibrary.TabIndex = 27;
+            this.dataGridViewRental.AllowUserToAddRows = false;
+            this.dataGridViewRental.AllowUserToDeleteRows = false;
+            this.dataGridViewRental.AllowUserToOrderColumns = true;
+            this.dataGridViewRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRental.Location = new System.Drawing.Point(6, 72);
+            this.dataGridViewRental.Name = "dataGridViewRental";
+            this.dataGridViewRental.ReadOnly = true;
+            this.dataGridViewRental.RowHeadersWidth = 51;
+            this.dataGridViewRental.RowTemplate.Height = 24;
+            this.dataGridViewRental.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRental.Size = new System.Drawing.Size(964, 300);
+            this.dataGridViewRental.TabIndex = 27;
             // 
             // comboBoxSearchBy
             // 
@@ -182,7 +182,7 @@
             this.groupBox2.AutoSize = true;
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox2.Controls.Add(this.numericUpDownOverdueDayCount);
-            this.groupBox2.Controls.Add(this.numericUpDownTotal);
+            this.groupBox2.Controls.Add(this.numericUpDownTotalPrice);
             this.groupBox2.Controls.Add(this.numericUpDownOverduePrice);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label13);
@@ -196,7 +196,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBoxAddress);
+            this.groupBox2.Controls.Add(this.textBoxNotes);
             this.groupBox2.Controls.Add(this.buttonRent);
             this.groupBox2.Controls.Add(this.buttonReturn);
             this.groupBox2.Controls.Add(this.label2);
@@ -211,6 +211,116 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INFORMATION";
+            // 
+            // numericUpDownOverdueDayCount
+            // 
+            this.numericUpDownOverdueDayCount.Enabled = false;
+            this.numericUpDownOverdueDayCount.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownOverdueDayCount.Location = new System.Drawing.Point(185, 475);
+            this.numericUpDownOverdueDayCount.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDownOverdueDayCount.Name = "numericUpDownOverdueDayCount";
+            this.numericUpDownOverdueDayCount.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownOverdueDayCount.TabIndex = 56;
+            // 
+            // numericUpDownTotalPrice
+            // 
+            this.numericUpDownTotalPrice.Enabled = false;
+            this.numericUpDownTotalPrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownTotalPrice.Location = new System.Drawing.Point(634, 472);
+            this.numericUpDownTotalPrice.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDownTotalPrice.Name = "numericUpDownTotalPrice";
+            this.numericUpDownTotalPrice.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownTotalPrice.TabIndex = 55;
+            // 
+            // numericUpDownOverduePrice
+            // 
+            this.numericUpDownOverduePrice.Enabled = false;
+            this.numericUpDownOverduePrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownOverduePrice.Location = new System.Drawing.Point(185, 509);
+            this.numericUpDownOverduePrice.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDownOverduePrice.Name = "numericUpDownOverduePrice";
+            this.numericUpDownOverduePrice.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownOverduePrice.TabIndex = 43;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(13, 511);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(166, 23);
+            this.label16.TabIndex = 54;
+            this.label16.Text = "Overdue Price";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(546, 511);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 23);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "Status";
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStatus.Location = new System.Drawing.Point(634, 508);
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.ReadOnly = true;
+            this.textBoxStatus.Size = new System.Drawing.Size(200, 30);
+            this.textBoxStatus.TabIndex = 51;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(13, 475);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(166, 23);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Overdue Day/s";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(558, 475);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 23);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "Total";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 442);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(250, 23);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Expected Return Date";
+            // 
+            // dateTimePickerReturnDate
+            // 
+            this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(277, 436);
+            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
+            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(557, 30);
+            this.dateTimePickerReturnDate.TabIndex = 46;
             // 
             // dateTimePickerRentalDate
             // 
@@ -353,6 +463,7 @@
             // 
             // textBoxVideoFormat
             // 
+            this.textBoxVideoFormat.Enabled = false;
             this.textBoxVideoFormat.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVideoFormat.Location = new System.Drawing.Point(250, 97);
             this.textBoxVideoFormat.Name = "textBoxVideoFormat";
@@ -371,6 +482,7 @@
             // 
             // numericUpDownRentPrice
             // 
+            this.numericUpDownRentPrice.Enabled = false;
             this.numericUpDownRentPrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownRentPrice.Location = new System.Drawing.Point(663, 97);
             this.numericUpDownRentPrice.Name = "numericUpDownRentPrice";
@@ -421,14 +533,14 @@
             this.label5.TabIndex = 39;
             this.label5.Text = "Note/s";
             // 
-            // textBoxAddress
+            // textBoxNotes
             // 
-            this.textBoxAddress.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(125, 545);
-            this.textBoxAddress.Multiline = true;
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(709, 100);
-            this.textBoxAddress.TabIndex = 38;
+            this.textBoxNotes.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNotes.Location = new System.Drawing.Point(125, 545);
+            this.textBoxNotes.Multiline = true;
+            this.textBoxNotes.Name = "textBoxNotes";
+            this.textBoxNotes.Size = new System.Drawing.Size(709, 100);
+            this.textBoxNotes.TabIndex = 38;
             // 
             // buttonRent
             // 
@@ -477,116 +589,6 @@
             this.textBoxRentalId.Size = new System.Drawing.Size(709, 30);
             this.textBoxRentalId.TabIndex = 6;
             // 
-            // dateTimePickerReturnDate
-            // 
-            this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(277, 436);
-            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
-            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(557, 30);
-            this.dateTimePickerReturnDate.TabIndex = 46;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 442);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(250, 23);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Expected Return Date";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(558, 475);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 23);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "Total";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 475);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(166, 23);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Overdue Day/s";
-            // 
-            // textBoxStatus
-            // 
-            this.textBoxStatus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStatus.Location = new System.Drawing.Point(634, 508);
-            this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.ReadOnly = true;
-            this.textBoxStatus.Size = new System.Drawing.Size(200, 30);
-            this.textBoxStatus.TabIndex = 51;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(546, 511);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 23);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Status";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(13, 511);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(166, 23);
-            this.label16.TabIndex = 54;
-            this.label16.Text = "Overdue Price";
-            // 
-            // numericUpDownOverduePrice
-            // 
-            this.numericUpDownOverduePrice.Enabled = false;
-            this.numericUpDownOverduePrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownOverduePrice.Location = new System.Drawing.Point(185, 509);
-            this.numericUpDownOverduePrice.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDownOverduePrice.Name = "numericUpDownOverduePrice";
-            this.numericUpDownOverduePrice.Size = new System.Drawing.Size(200, 30);
-            this.numericUpDownOverduePrice.TabIndex = 43;
-            // 
-            // numericUpDownTotal
-            // 
-            this.numericUpDownTotal.Enabled = false;
-            this.numericUpDownTotal.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownTotal.Location = new System.Drawing.Point(634, 472);
-            this.numericUpDownTotal.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDownTotal.Name = "numericUpDownTotal";
-            this.numericUpDownTotal.Size = new System.Drawing.Size(200, 30);
-            this.numericUpDownTotal.TabIndex = 55;
-            // 
-            // numericUpDownOverdueDayCount
-            // 
-            this.numericUpDownOverdueDayCount.Enabled = false;
-            this.numericUpDownOverdueDayCount.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownOverdueDayCount.Location = new System.Drawing.Point(185, 475);
-            this.numericUpDownOverdueDayCount.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDownOverdueDayCount.Name = "numericUpDownOverdueDayCount";
-            this.numericUpDownOverdueDayCount.Size = new System.Drawing.Size(200, 30);
-            this.numericUpDownOverdueDayCount.TabIndex = 56;
-            // 
             // UserControlRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -596,21 +598,20 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "UserControlRental";
             this.Size = new System.Drawing.Size(989, 1125);
-            this.Load += new System.EventHandler(this.UserControlRental_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomerLibrary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverdueDayCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotalPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverduePrice)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRentLimit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverduePrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverdueDayCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,7 +620,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridViewCustomerLibrary;
+        private System.Windows.Forms.DataGridView dataGridViewRental;
         private System.Windows.Forms.ComboBox comboBoxSearchBy;
         private System.Windows.Forms.TextBox textBoxSearchValue;
         private System.Windows.Forms.Label label11;
@@ -627,7 +628,7 @@
         private System.Windows.Forms.Button buttonRetrieveAll;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.TextBox textBoxNotes;
         private System.Windows.Forms.Button buttonRent;
         private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.Label label2;
@@ -655,7 +656,7 @@
         private System.Windows.Forms.TextBox textBoxStatus;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDownTotal;
+        private System.Windows.Forms.NumericUpDown numericUpDownTotalPrice;
         private System.Windows.Forms.NumericUpDown numericUpDownOverduePrice;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;

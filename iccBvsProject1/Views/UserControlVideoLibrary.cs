@@ -15,9 +15,10 @@ namespace iccBvsProject1.Views
 {
     public partial class UserControlVideoLibrary : UserControl
     {
-        VideoModel vm = new VideoModel();
-        VideoController vc = new VideoController();
-        DataTable dt;
+        public UserControlRental UCR { get; set; }  // holds reference from this uc
+        private VideoModel vm = new VideoModel();
+        private VideoController vc = new VideoController();
+        private DataTable dt;
 
         public UserControlVideoLibrary()
         {
@@ -60,11 +61,6 @@ namespace iccBvsProject1.Views
             }
         }
 
-        public DataGridView dgvVideo
-        {
-            get { return dataGridViewVideoLibrary; }
-        }
-
         private void buttonVideoRetrieve_Click(object sender, EventArgs e)
         {
             vm.SearchBy = comboBoxSearchBy.SelectedIndex;
@@ -105,6 +101,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
+
+            UCR.LoadVideoCombobox();
         }
 
         private void buttonSubmitStockQtyOperation_Click(object sender, EventArgs e)
@@ -120,6 +118,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
+
+            UCR.LoadVideoCombobox();
         }
 
         private void buttonVideoUpdateRecord_Click(object sender, EventArgs e)
@@ -138,6 +138,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
+
+            UCR.LoadVideoCombobox();
         }
 
 
@@ -149,6 +151,8 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
+
+            UCR.LoadVideoCombobox();
         }
     }
 }

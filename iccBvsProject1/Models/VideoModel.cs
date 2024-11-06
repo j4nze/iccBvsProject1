@@ -26,4 +26,22 @@ namespace iccBvsProject1.Models
         public int SearchBy { get; set; }
         public string SearchByValue { get; set; }
     }
+
+    class VideoTitleComboBoxItem
+    {
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public int RentLimit { get; set; }
+        public int Price { get; set; }
+        public string Format { get; set; }
+
+        public VideoTitleComboBoxItem(string id, string title, int rentLimit, int price, string format)
+        {
+            this.Id = id;
+            this.Title = title;
+            this.RentLimit = rentLimit;
+            this.Price = price;
+            this.Format = format;
+        }
+    }
 }

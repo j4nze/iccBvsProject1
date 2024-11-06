@@ -16,5 +16,18 @@ namespace iccBvsProject1.Models
 
         public int SearchBy { get; set; }
         public string SearchByValue { get; set; }
+
+    }
+
+    class CustomerNameComboBoxItem
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+
+        public CustomerNameComboBoxItem(string id, string name)
+        {
+            this.Id = id;
+            this.Name = name;
+        }
     }
 }

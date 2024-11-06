@@ -38,9 +38,10 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
-        public List<ComboBoxItem> RetrieveAllNames()
+        
+        public List<Models.CustomerNameComboBoxItem> RetrieveAllNames()
         {
-            var list = new List<ComboBoxItem>();
+            var list = new List<Models.CustomerNameComboBoxItem>();
 
             try
             {
@@ -49,18 +50,16 @@ namespace iccBvsProject1.Controllers
                     conn.Open();
                     // 7. SQL Introduction
                     // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT customer_id, name FROM Customer", conn))
+                    using (SqlCommand cmd = new SqlCommand("SELECT customer_id, name FROM Customer ORDER BY name", conn))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                // Retrieve values directly from the reader and add to the list
                                 string id = reader["customer_id"].ToString();
                                 string name = reader["name"].ToString();
-                                string displayText = $"[{id}] {name}";
 
-                                list.Add(new ComboBoxItem(id, displayText));
+                                list.Add(new Models.CustomerNameComboBoxItem(id, name));
                             }
                         }
                     }
@@ -73,6 +72,7 @@ namespace iccBvsProject1.Controllers
 
             return list;
         }
+        
         public DataTable RetrieveSpecific(CustomerModel cm)
         {
             try
@@ -104,6 +104,7 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
+        
         public void Create(CustomerModel cm)
         {
             try
@@ -133,6 +134,7 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
+        
         public void Update(CustomerModel cm)
         {
             try
@@ -162,6 +164,7 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
+        
         public void Delete(CustomerModel cm)
         {
             try
@@ -188,22 +191,4 @@ namespace iccBvsProject1.Controllers
             }
         }
     }
-
-    public class ComboBoxItem
-    {
-        public string Id { get; set; }
-        public string DisplayText { get; set; }
-
-        public ComboBoxItem(string id, string displayText)
-        {
-            Id = id;
-            DisplayText = displayText;
-        }
-
-        public override string ToString()
-        {
-            return DisplayText;
-        }
-    }
-
 }
