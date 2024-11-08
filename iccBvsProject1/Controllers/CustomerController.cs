@@ -13,10 +13,9 @@ namespace iccBvsProject1.Controllers
 {
     class CustomerController
     {
-        DataTable dt = new DataTable();
-
         public DataTable RetrieveAll()
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
@@ -75,6 +74,7 @@ namespace iccBvsProject1.Controllers
         
         public DataTable RetrieveSpecific(CustomerModel cm)
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))

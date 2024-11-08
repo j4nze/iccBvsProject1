@@ -32,11 +32,16 @@ namespace iccBvsProject1.Views
             dataGridViewVideoLibrary.DataSource = dt;
         }
 
+        public void ReloadList()
+        {
+            dt = vc.RetrieveAll();
+            dataGridViewVideoLibrary.DataSource = dt;
+        }
+
         private void comboBoxVideoFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxFormat.Text == "VCD") numericUpDownRentPrice.Value = 25;
-            else if (comboBoxFormat.Text == "DVD") numericUpDownRentPrice.Value = 50;
-            else numericUpDownRentPrice.Value = 10;
+            if (comboBoxFormat.SelectedIndex == 0) numericUpDownRentPrice.Value = 25;
+            else if (comboBoxFormat.SelectedIndex == 1) numericUpDownRentPrice.Value = 50;
         }
 
         private void dataGridViewVideoLibrary_SelectionChanged(object sender, EventArgs e)

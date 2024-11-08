@@ -9,9 +9,9 @@ namespace iccBvsProject1.Controllers
 {
     class VideoController
     {
-        DataTable dt = new DataTable();
         public DataTable RetrieveAll()
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
@@ -36,6 +36,7 @@ namespace iccBvsProject1.Controllers
         
         public DataTable RetrieveSpecific(VideoModel vm)
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
@@ -43,7 +44,7 @@ namespace iccBvsProject1.Controllers
                     conn.Open();
                     string query = "";
                     // 7. SQL Introduction
-                    // Context #8: SQL Select Statement (with Comparison Operator (=) and Logical Operator (LIKE))
+                    // Context #8: SQL Select Statement (with Logical Operator (LIKE))
                     if (vm.SearchBy == 0) query = "SELECT * FROM Video WHERE video_id LIKE @SearchValue";
 
                     if (vm.SearchBy == 1) query = "SELECT * FROM Video WHERE title LIKE @SearchValue";
@@ -65,7 +66,35 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
-        
+
+        public int RetrieveSpecificQty(string video_id)
+        {
+            int currentQuantity = 0;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT in_qty FROM Video WHERE video_id = @SearchValue", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchValue", video_id);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out currentQuantity)) return currentQuantity;
+                        else return 0;
+
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return currentQuantity;
+        }
+
         public List<Models.VideoTitleComboBoxItem> RetrieveAllTitles()
         {
             var list = new List<Models.VideoTitleComboBoxItem>();
@@ -198,7 +227,7 @@ namespace iccBvsProject1.Controllers
                     }
                     // 7. SQL Introduction
                     // Context #10: SQL Update Statement (multiple)
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET total_qty = @TotalQty , in_qty = @InQty WHERE video_id = @Id", conn))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET total_qty = @TotalQty, in_qty = @InQty WHERE video_id = @Id", conn))
                     {
                         cmd.Parameters.AddWithValue("@Id", vm.Id);
                         cmd.Parameters.AddWithValue("@TotalQty", vm.TotalQty);
@@ -216,7 +245,59 @@ namespace iccBvsProject1.Controllers
                 MessageBox.Show(exc.Message);
             }
         }
-        
+
+        public void RentQty(string video_id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+                    // 7. SQL Introduction
+                    // Context #10: SQL Update Statement (multiple)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET in_qty = in_qty - 1, out_qty = out_qty + 1 WHERE video_id = @Id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", video_id);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0) MessageBox.Show("Success");
+                        else MessageBox.Show("Failed");
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
+        public void ReturnQty(string video_id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+                    // 7. SQL Introduction
+                    // Context #10: SQL Update Statement (multiple)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET in_qty = in_qty + 1, out_qty = out_qty - 1 WHERE video_id = @Id", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", video_id);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0) MessageBox.Show("Success");
+                        else MessageBox.Show("Failed");
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
+
         public void Delete(VideoModel vm)
         {
             try

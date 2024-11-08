@@ -21,6 +21,7 @@ namespace iccBvsProject1
 
             ucVideoLibrary.UCR = ucRental;  // enable ucVideoLibrary to have access (ex. calling methods) in the ucRental
             ucCustomerLibrary.UCR = ucRental;   // enable ucCustomerLibrary to have access (ex. calling methods) in the ucRental
+            ucRental.UCV = ucVideoLibrary;
         }
 
         private void InitializeUserControls()

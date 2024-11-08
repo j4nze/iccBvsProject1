@@ -12,18 +12,36 @@ namespace iccBvsProject1.Controllers
 {
     class RentController
     {
-        DataTable dt = new DataTable();
-
         public DataTable RetrieveAll()
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
                     // 7. SQL Introduction
-                    // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Rental", conn))
+                    // Context #16: SQL JOIN (INNER)
+                    using (SqlCommand cmd = new SqlCommand("SELECT " +
+                        "r.rent_id, " +
+                        "r.status, " +
+                        "c.customer_id," +
+                        "c.name," +
+                        "v.video_id," +
+                        "v.title," +
+                        "v.price," +
+                        "r.rental_date, " +
+                        "r.expected_return_date, " +
+                        "r.overdue_days, " +
+                        "r.overdue_price, " +
+                        "r.total_price, " +
+                        "v.format," +
+                        "v.rent_limit," +
+                        "r.notes " +
+                        "FROM Rental r " +
+                        "INNER JOIN Video v ON r.video_id = v.video_id " +
+                        "INNER JOIN Customer c ON r.customer_id = c.customer_id " +
+                        "ORDER BY r.status;", conn))
                     {
                         SqlDataAdapter adp = new SqlDataAdapter(cmd);
                         adp.Fill(dt);
@@ -40,17 +58,51 @@ namespace iccBvsProject1.Controllers
  
         public DataTable RetrieveSpecific(RentModel rm)
         {
+            DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();
-                    string query = "";
+                    string baseQuery = "SELECT " +
+                        "r.rent_id, " +
+                        "r.status, " +
+                        "c.customer_id, " +
+                        "c.name, " +
+                        "v.video_id, " +
+                        "v.title, " +
+                        "v.price, " +
+                        "r.rental_date, " +
+                        "r.expected_return_date, " +
+                        "r.overdue_days, " +
+                        "r.overdue_price, " +
+                        "r.total_price, " +
+                        "v.format, " +
+                        "v.rent_limit, " +
+                        "r.notes " +
+                        "FROM Rental r " +
+                        "INNER JOIN Video v ON r.video_id = v.video_id " +
+                        "INNER JOIN Customer c ON r.customer_id = c.customer_id ";
                     // 7. SQL Introduction
-                    // Context #8: SQL Select Statement (with Comparison Operator (=) and Logical Operator (LIKE))
-                    if (rm.SearchBy == 0) query = "SELECT * FROM Rental WHERE customer_id LIKE @SearchValue";
+                    // Context #16: SQL JOIN (INNER) (with Comparison Operator (=) and Logical Operator (LIKE))
+                    string whereClause = string.Empty;
+                    switch (rm.SearchBy)
+                    {
+                        case 0:
+                            whereClause = "WHERE r.rent_id LIKE @SearchValue ";
+                            break;
+                        case 1:
+                            whereClause = "WHERE v.title LIKE @SearchValue ";
+                            break;
+                        case 2:
+                            whereClause = "WHERE c.name LIKE @SearchValue ";
+                            break;
+                        default:
+                            whereClause = "WHERE r.rent_id LIKE @SearchValue ";
+                            break;
+                    }
 
-                    if (rm.SearchBy == 1) query = "SELECT * FROM Rental WHERE name LIKE @SearchValue";
+                    string query = baseQuery + whereClause + "ORDER BY r.status;";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -115,14 +167,11 @@ namespace iccBvsProject1.Controllers
                 {
                     conn.Open();
                     // 7. SQL Introduction
-                    // Context #10: SQL Update Statement (multiple)
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Rental SET name = @name, mobile = @Mobile, email = @Email, address = @Address WHERE customer_id = @Id", conn))
+                    // Context #10: SQL Update Statement (single)
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Rental SET status = @Status WHERE rent_id = @Id", conn))
                     {
                         cmd.Parameters.AddWithValue("@Id", rm.Id);
-                        //cmd.Parameters.AddWithValue("@Name", rm.Name);
-                        //cmd.Parameters.AddWithValue("@Mobile", rm.Mobile);
-                        //cmd.Parameters.AddWithValue("@Email", rm.Email);
-                        //cmd.Parameters.AddWithValue("@Address", rm.Address);
+                        cmd.Parameters.AddWithValue("@status", rm.Status);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 

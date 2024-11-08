@@ -94,7 +94,8 @@
             this.groupBox1.Controls.Add(this.buttonRetrieveAll);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 712);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.Size = new System.Drawing.Size(983, 408);
@@ -107,6 +108,7 @@
             this.dataGridViewRental.AllowUserToAddRows = false;
             this.dataGridViewRental.AllowUserToDeleteRows = false;
             this.dataGridViewRental.AllowUserToOrderColumns = true;
+            this.dataGridViewRental.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRental.Location = new System.Drawing.Point(6, 72);
             this.dataGridViewRental.Name = "dataGridViewRental";
@@ -116,6 +118,7 @@
             this.dataGridViewRental.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRental.Size = new System.Drawing.Size(964, 300);
             this.dataGridViewRental.TabIndex = 27;
+            this.dataGridViewRental.SelectionChanged += new System.EventHandler(this.dataGridViewRental_SelectionChanged);
             // 
             // comboBoxSearchBy
             // 
@@ -203,14 +206,13 @@
             this.groupBox2.Controls.Add(this.textBoxRentalId);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.groupBox2.Location = new System.Drawing.Point(3, 439);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox2.Size = new System.Drawing.Size(983, 681);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "INFORMATION";
+            this.groupBox2.Text = "DETAILS";
             // 
             // numericUpDownOverdueDayCount
             // 
@@ -218,7 +220,7 @@
             this.numericUpDownOverdueDayCount.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownOverdueDayCount.Location = new System.Drawing.Point(185, 475);
             this.numericUpDownOverdueDayCount.Maximum = new decimal(new int[] {
-            3,
+            1000,
             0,
             0,
             0});
@@ -232,7 +234,7 @@
             this.numericUpDownTotalPrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownTotalPrice.Location = new System.Drawing.Point(634, 472);
             this.numericUpDownTotalPrice.Maximum = new decimal(new int[] {
-            3,
+            1000,
             0,
             0,
             0});
@@ -246,7 +248,7 @@
             this.numericUpDownOverduePrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownOverduePrice.Location = new System.Drawing.Point(185, 509);
             this.numericUpDownOverduePrice.Maximum = new decimal(new int[] {
-            3,
+            1000,
             0,
             0,
             0});
@@ -276,12 +278,13 @@
             // 
             // textBoxStatus
             // 
+            this.textBoxStatus.Enabled = false;
             this.textBoxStatus.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStatus.Location = new System.Drawing.Point(634, 508);
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.ReadOnly = true;
             this.textBoxStatus.Size = new System.Drawing.Size(200, 30);
             this.textBoxStatus.TabIndex = 51;
+            this.textBoxStatus.TextChanged += new System.EventHandler(this.textBoxStatus_TextChanged);
             // 
             // label12
             // 
@@ -315,6 +318,7 @@
             // 
             // dateTimePickerReturnDate
             // 
+            this.dateTimePickerReturnDate.Enabled = false;
             this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerReturnDate.Location = new System.Drawing.Point(277, 436);
@@ -330,6 +334,7 @@
             this.dateTimePickerRentalDate.Name = "dateTimePickerRentalDate";
             this.dateTimePickerRentalDate.Size = new System.Drawing.Size(557, 30);
             this.dateTimePickerRentalDate.TabIndex = 45;
+            this.dateTimePickerRentalDate.ValueChanged += new System.EventHandler(this.dateTimePickerRentalDate_ValueChanged);
             // 
             // label8
             // 
@@ -485,6 +490,11 @@
             this.numericUpDownRentPrice.Enabled = false;
             this.numericUpDownRentPrice.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownRentPrice.Location = new System.Drawing.Point(663, 97);
+            this.numericUpDownRentPrice.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDownRentPrice.Name = "numericUpDownRentPrice";
             this.numericUpDownRentPrice.Size = new System.Drawing.Size(150, 30);
             this.numericUpDownRentPrice.TabIndex = 33;
@@ -550,7 +560,7 @@
             this.buttonRent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.buttonRent.Location = new System.Drawing.Point(840, 545);
             this.buttonRent.Name = "buttonRent";
-            this.buttonRent.Size = new System.Drawing.Size(130, 40);
+            this.buttonRent.Size = new System.Drawing.Size(130, 47);
             this.buttonRent.TabIndex = 3;
             this.buttonRent.Text = "Rent";
             this.buttonRent.UseVisualStyleBackColor = false;
@@ -591,13 +601,15 @@
             // 
             // UserControlRental
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "UserControlRental";
-            this.Size = new System.Drawing.Size(989, 1125);
+            this.Size = new System.Drawing.Size(989, 1123);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).EndInit();

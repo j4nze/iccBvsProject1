@@ -97,7 +97,8 @@
             this.groupBox1.Controls.Add(this.buttonRetrieveAll);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 747);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.Size = new System.Drawing.Size(983, 408);
@@ -110,6 +111,7 @@
             this.dataGridViewVideoLibrary.AllowUserToAddRows = false;
             this.dataGridViewVideoLibrary.AllowUserToDeleteRows = false;
             this.dataGridViewVideoLibrary.AllowUserToOrderColumns = true;
+            this.dataGridViewVideoLibrary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewVideoLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVideoLibrary.Location = new System.Drawing.Point(6, 72);
             this.dataGridViewVideoLibrary.Name = "dataGridViewVideoLibrary";
@@ -201,7 +203,7 @@
             this.groupBox2.Controls.Add(this.textBoxId);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 439);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
@@ -315,11 +317,11 @@
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
-            this.buttonCreate.Location = new System.Drawing.Point(840, 36);
+            this.buttonCreate.Location = new System.Drawing.Point(840, 350);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(130, 102);
+            this.buttonCreate.Size = new System.Drawing.Size(130, 80);
             this.buttonCreate.TabIndex = 3;
-            this.buttonCreate.Text = "Create\r\nNew\r\nRecord";
+            this.buttonCreate.Text = "Create\r\nVideo";
             this.buttonCreate.UseVisualStyleBackColor = false;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreateVideoRecord_Click);
             // 
@@ -534,11 +536,10 @@
             this.groupBox4.Controls.Add(this.textBoxVideoIdNewIn);
             this.groupBox4.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox4.Location = new System.Drawing.Point(3, 617);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.groupBox4.Location = new System.Drawing.Point(3, 1053);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox4.Size = new System.Drawing.Size(976, 102);
+            this.groupBox4.Size = new System.Drawing.Size(983, 102);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "STOCK";
@@ -549,7 +550,7 @@
             this.buttonSubmitNewQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmitNewQty.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmitNewQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
-            this.buttonSubmitNewQty.Location = new System.Drawing.Point(873, 36);
+            this.buttonSubmitNewQty.Location = new System.Drawing.Point(880, 36);
             this.buttonSubmitNewQty.Name = "buttonSubmitNewQty";
             this.buttonSubmitNewQty.Size = new System.Drawing.Size(90, 30);
             this.buttonSubmitNewQty.TabIndex = 28;
@@ -561,7 +562,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(715, 38);
+            this.label13.Location = new System.Drawing.Point(722, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 23);
             this.label13.TabIndex = 27;
@@ -571,7 +572,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(409, 39);
+            this.label12.Location = new System.Drawing.Point(416, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(118, 23);
             this.label12.TabIndex = 18;
@@ -580,7 +581,7 @@
             // numericUpDownNewQty
             // 
             this.numericUpDownNewQty.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownNewQty.Location = new System.Drawing.Point(767, 36);
+            this.numericUpDownNewQty.Location = new System.Drawing.Point(774, 36);
             this.numericUpDownNewQty.Minimum = new decimal(new int[] {
             1,
             0,
@@ -613,7 +614,7 @@
             this.comboBoxNewQtyOperation.Items.AddRange(new object[] {
             "Addition",
             "Subtraction"});
-            this.comboBoxNewQtyOperation.Location = new System.Drawing.Point(533, 36);
+            this.comboBoxNewQtyOperation.Location = new System.Drawing.Point(540, 36);
             this.comboBoxNewQtyOperation.Name = "comboBoxNewQtyOperation";
             this.comboBoxNewQtyOperation.Size = new System.Drawing.Size(176, 30);
             this.comboBoxNewQtyOperation.TabIndex = 26;
@@ -624,13 +625,12 @@
             this.textBoxVideoIdNewIn.Location = new System.Drawing.Point(53, 36);
             this.textBoxVideoIdNewIn.Name = "textBoxVideoIdNewIn";
             this.textBoxVideoIdNewIn.ReadOnly = true;
-            this.textBoxVideoIdNewIn.Size = new System.Drawing.Size(350, 30);
+            this.textBoxVideoIdNewIn.Size = new System.Drawing.Size(357, 30);
             this.textBoxVideoIdNewIn.TabIndex = 16;
             // 
             // UserControlVideoLibrary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;

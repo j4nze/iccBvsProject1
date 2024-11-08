@@ -73,14 +73,13 @@
             this.groupBox2.Controls.Add(this.textBoxId);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.groupBox2.Location = new System.Drawing.Point(3, 439);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox2.Size = new System.Drawing.Size(983, 316);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "INFORMATION";
+            this.groupBox2.Text = "DETAILS";
             // 
             // label5
             // 
@@ -125,11 +124,11 @@
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
-            this.buttonCreate.Location = new System.Drawing.Point(840, 36);
+            this.buttonCreate.Location = new System.Drawing.Point(840, 108);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(130, 102);
+            this.buttonCreate.Size = new System.Drawing.Size(130, 66);
             this.buttonCreate.TabIndex = 3;
-            this.buttonCreate.Text = "Create\r\nNew\r\nRecord";
+            this.buttonCreate.Text = "Register\r\nCustomer";
             this.buttonCreate.UseVisualStyleBackColor = false;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
@@ -228,7 +227,8 @@
             this.groupBox1.Controls.Add(this.buttonRetrieveAll);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(149)))), ((int)(((byte)(132)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 333);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
             this.groupBox1.Size = new System.Drawing.Size(983, 408);
@@ -241,6 +241,7 @@
             this.dataGridViewCustomerLibrary.AllowUserToAddRows = false;
             this.dataGridViewCustomerLibrary.AllowUserToDeleteRows = false;
             this.dataGridViewCustomerLibrary.AllowUserToOrderColumns = true;
+            this.dataGridViewCustomerLibrary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomerLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomerLibrary.Location = new System.Drawing.Point(6, 72);
             this.dataGridViewCustomerLibrary.Name = "dataGridViewCustomerLibrary";
@@ -313,15 +314,14 @@
             // 
             // UserControlCustomerLibrary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "UserControlCustomerLibrary";
-            this.Size = new System.Drawing.Size(989, 744);
+            this.Size = new System.Drawing.Size(989, 758);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

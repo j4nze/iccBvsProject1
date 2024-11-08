@@ -214,11 +214,15 @@
             // ucRental
             // 
             this.ucRental.AutoScroll = true;
+            this.ucRental.AutoSize = true;
+            this.ucRental.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ucRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
+            this.ucRental.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucRental.Location = new System.Drawing.Point(300, 75);
             this.ucRental.Name = "ucRental";
             this.ucRental.Size = new System.Drawing.Size(1072, 578);
             this.ucRental.TabIndex = 5;
+            this.ucRental.UCV = null;
             // 
             // ucCustomerLibrary
             // 
@@ -230,6 +234,7 @@
             this.ucCustomerLibrary.Name = "ucCustomerLibrary";
             this.ucCustomerLibrary.Size = new System.Drawing.Size(1072, 578);
             this.ucCustomerLibrary.TabIndex = 4;
+            this.ucCustomerLibrary.UCR = null;
             // 
             // ucVideoLibrary
             // 
@@ -242,11 +247,11 @@
             this.ucVideoLibrary.Name = "ucVideoLibrary";
             this.ucVideoLibrary.Size = new System.Drawing.Size(1072, 578);
             this.ucVideoLibrary.TabIndex = 3;
+            this.ucVideoLibrary.UCR = null;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1372, 653);
             this.Controls.Add(this.ucRental);
