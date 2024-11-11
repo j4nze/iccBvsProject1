@@ -22,6 +22,9 @@ namespace iccBvsProject1
             ucVideoLibrary.UCR = ucRental;  // enable ucVideoLibrary to have access (ex. calling methods) in the ucRental
             ucCustomerLibrary.UCR = ucRental;   // enable ucCustomerLibrary to have access (ex. calling methods) in the ucRental
             ucRental.UCV = ucVideoLibrary;
+
+            ShowUserControl(ucDashboard);
+            labelBreadCrumbHeader.Text = "Dashboard";
         }
 
         private void InitializeUserControls()
@@ -29,6 +32,7 @@ namespace iccBvsProject1
             ucVideoLibrary.Visible = false;
             ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
+            ucDashboard.Visible = false;
         }
 
         private void HideAllUserControls()
@@ -36,6 +40,7 @@ namespace iccBvsProject1
             ucVideoLibrary.Visible = false;
             ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
+            ucDashboard.Visible = false;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -69,7 +74,7 @@ namespace iccBvsProject1
 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
-            HideAllUserControls();
+            ShowUserControl(ucDashboard);
             labelBreadCrumbHeader.Text = "Dashboard";
         }
     }
