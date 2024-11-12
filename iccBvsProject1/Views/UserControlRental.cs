@@ -162,7 +162,7 @@ namespace iccBvsProject1.Views
             dt = rc.RetrieveAll();
             dataGridViewRental.DataSource = dt;
 
-            UCV.ReloadList();
+            UCV.LoadList();
         }
 
         private void buttonRetrieveSpecific_Click(object sender, EventArgs e)
@@ -211,6 +211,5 @@ namespace iccBvsProject1.Views
                 numericUpDownOverduePrice.Value = 0;
             }
         }
-
     }
 }

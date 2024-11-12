@@ -24,7 +24,7 @@ namespace iccBvsProject1
             ucRental.UCV = ucVideoLibrary;
 
             ShowUserControl(ucDashboard);
-            labelBreadCrumbHeader.Text = "Dashboard";
+            labelSectionHeader.Text = "Dashboard";
         }
 
         private void InitializeUserControls()
@@ -57,25 +57,25 @@ namespace iccBvsProject1
         private void videoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowUserControl(ucVideoLibrary);
-            labelBreadCrumbHeader.Text = "Video Library";
+            labelSectionHeader.Text = "Video Library";
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowUserControl(ucCustomerLibrary);
-            labelBreadCrumbHeader.Text = "Customer Library";
+            labelSectionHeader.Text = "Customer Library";
         }
 
         private void buttonRental_Click(object sender, EventArgs e)
         {
             ShowUserControl(ucRental);
-            labelBreadCrumbHeader.Text = "Rental Records";
+            labelSectionHeader.Text = "Rental Records";
         }
 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
             ShowUserControl(ucDashboard);
-            labelBreadCrumbHeader.Text = "Dashboard";
+            labelSectionHeader.Text = "Dashboard";
         }
     }
 }

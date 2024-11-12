@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewRental = new System.Windows.Forms.DataGridView();
             this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
             this.textBoxSearchValue = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.buttonRetrieveSpecific = new System.Windows.Forms.Button();
             this.buttonRetrieveAll = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownOverdueDayCount = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownTotalPrice = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownOverduePrice = new System.Windows.Forms.NumericUpDown();
@@ -45,15 +47,16 @@
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerRentalDate = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxRentalId = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxCustomerName = new System.Windows.Forms.ComboBox();
             this.textBoxCustomerId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerRentalDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBoxVideoTitle = new System.Windows.Forms.ComboBox();
             this.textBoxVideoId = new System.Windows.Forms.TextBox();
@@ -69,8 +72,6 @@
             this.textBoxNotes = new System.Windows.Forms.TextBox();
             this.buttonRent = new System.Windows.Forms.Button();
             this.buttonReturn = new System.Windows.Forms.Button();
-            this.textBoxRentalId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverdueDayCount)).BeginInit();
@@ -87,12 +88,18 @@
             this.dataGridViewRental.AllowUserToAddRows = false;
             this.dataGridViewRental.AllowUserToDeleteRows = false;
             this.dataGridViewRental.AllowUserToOrderColumns = true;
+            this.dataGridViewRental.AllowUserToResizeColumns = false;
+            this.dataGridViewRental.AllowUserToResizeRows = false;
             this.dataGridViewRental.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewRental.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRental.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewRental.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewRental.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -102,20 +109,30 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewRental.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewRental.Location = new System.Drawing.Point(23, 79);
-            this.dataGridViewRental.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.dataGridViewRental.Margin = new System.Windows.Forms.Padding(3, 3, 20, 20);
             this.dataGridViewRental.Name = "dataGridViewRental";
             this.dataGridViewRental.ReadOnly = true;
+            this.dataGridViewRental.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewRental.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewRental.RowHeadersWidth = 51;
             this.dataGridViewRental.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewRental.RowTemplate.Height = 24;
             this.dataGridViewRental.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRental.Size = new System.Drawing.Size(1457, 500);
+            this.dataGridViewRental.Size = new System.Drawing.Size(1219, 500);
             this.dataGridViewRental.TabIndex = 27;
             this.dataGridViewRental.SelectionChanged += new System.EventHandler(this.dataGridViewRental_SelectionChanged);
             // 
@@ -136,9 +153,9 @@
             // textBoxSearchValue
             // 
             this.textBoxSearchValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchValue.Location = new System.Drawing.Point(385, 34);
+            this.textBoxSearchValue.Location = new System.Drawing.Point(395, 34);
             this.textBoxSearchValue.Name = "textBoxSearchValue";
-            this.textBoxSearchValue.Size = new System.Drawing.Size(733, 30);
+            this.textBoxSearchValue.Size = new System.Drawing.Size(485, 30);
             this.textBoxSearchValue.TabIndex = 26;
             // 
             // label11
@@ -157,7 +174,7 @@
             this.buttonRetrieveSpecific.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveSpecific.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveSpecific.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(1124, 23);
+            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(886, 23);
             this.buttonRetrieveSpecific.Name = "buttonRetrieveSpecific";
             this.buttonRetrieveSpecific.Size = new System.Drawing.Size(150, 50);
             this.buttonRetrieveSpecific.TabIndex = 6;
@@ -171,7 +188,7 @@
             this.buttonRetrieveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveAll.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveAll.Location = new System.Drawing.Point(1280, 23);
+            this.buttonRetrieveAll.Location = new System.Drawing.Point(1042, 23);
             this.buttonRetrieveAll.Name = "buttonRetrieveAll";
             this.buttonRetrieveAll.Size = new System.Drawing.Size(200, 50);
             this.buttonRetrieveAll.TabIndex = 6;
@@ -205,12 +222,24 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(23, 602);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(1457, 619);
+            this.groupBox2.Size = new System.Drawing.Size(1219, 619);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DETAILS";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 50);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "ID";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // numericUpDownOverdueDayCount
             // 
@@ -223,21 +252,21 @@
             0,
             0});
             this.numericUpDownOverdueDayCount.Name = "numericUpDownOverdueDayCount";
-            this.numericUpDownOverdueDayCount.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownOverdueDayCount.Size = new System.Drawing.Size(150, 30);
             this.numericUpDownOverdueDayCount.TabIndex = 56;
             // 
             // numericUpDownTotalPrice
             // 
             this.numericUpDownTotalPrice.Enabled = false;
             this.numericUpDownTotalPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownTotalPrice.Location = new System.Drawing.Point(545, 509);
+            this.numericUpDownTotalPrice.Location = new System.Drawing.Point(495, 509);
             this.numericUpDownTotalPrice.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericUpDownTotalPrice.Name = "numericUpDownTotalPrice";
-            this.numericUpDownTotalPrice.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownTotalPrice.Size = new System.Drawing.Size(150, 30);
             this.numericUpDownTotalPrice.TabIndex = 55;
             // 
             // numericUpDownOverduePrice
@@ -251,7 +280,7 @@
             0,
             0});
             this.numericUpDownOverduePrice.Name = "numericUpDownOverduePrice";
-            this.numericUpDownOverduePrice.Size = new System.Drawing.Size(200, 30);
+            this.numericUpDownOverduePrice.Size = new System.Drawing.Size(150, 30);
             this.numericUpDownOverduePrice.TabIndex = 43;
             // 
             // label16
@@ -267,7 +296,7 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(439, 553);
+            this.label13.Location = new System.Drawing.Point(389, 552);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 50);
             this.label13.TabIndex = 53;
@@ -278,9 +307,9 @@
             // 
             this.textBoxStatus.Enabled = false;
             this.textBoxStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStatus.Location = new System.Drawing.Point(545, 564);
+            this.textBoxStatus.Location = new System.Drawing.Point(495, 563);
             this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(200, 30);
+            this.textBoxStatus.Size = new System.Drawing.Size(150, 30);
             this.textBoxStatus.TabIndex = 51;
             this.textBoxStatus.TextChanged += new System.EventHandler(this.textBoxStatus_TextChanged);
             // 
@@ -298,68 +327,34 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(439, 497);
+            this.label10.Location = new System.Drawing.Point(389, 497);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 50);
             this.label10.TabIndex = 49;
             this.label10.Text = "Total";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // textBoxRentalId
             // 
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 442);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(250, 50);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Expected Return Date";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimePickerReturnDate
-            // 
-            this.dateTimePickerReturnDate.Enabled = false;
-            this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(269, 450);
-            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
-            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(476, 30);
-            this.dateTimePickerReturnDate.TabIndex = 46;
-            // 
-            // dateTimePickerRentalDate
-            // 
-            this.dateTimePickerRentalDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerRentalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerRentalDate.Location = new System.Drawing.Point(269, 395);
-            this.dateTimePickerRentalDate.Name = "dateTimePickerRentalDate";
-            this.dateTimePickerRentalDate.Size = new System.Drawing.Size(476, 30);
-            this.dateTimePickerRentalDate.TabIndex = 45;
-            this.dateTimePickerRentalDate.ValueChanged += new System.EventHandler(this.dateTimePickerRentalDate_ValueChanged);
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 387);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(250, 50);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Rental Date";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.textBoxRentalId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRentalId.Location = new System.Drawing.Point(119, 46);
+            this.textBoxRentalId.Name = "textBoxRentalId";
+            this.textBoxRentalId.ReadOnly = true;
+            this.textBoxRentalId.Size = new System.Drawing.Size(1087, 30);
+            this.textBoxRentalId.TabIndex = 6;
             // 
             // groupBox3
             // 
-            this.groupBox3.AutoSize = true;
             this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.comboBoxCustomerName);
             this.groupBox3.Controls.Add(this.textBoxCustomerId);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(812, 96);
+            this.groupBox3.Location = new System.Drawing.Point(671, 96);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox3.Size = new System.Drawing.Size(632, 171);
+            this.groupBox3.Size = new System.Drawing.Size(535, 171);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer";
@@ -371,17 +366,17 @@
             this.comboBoxCustomerName.FormattingEnabled = true;
             this.comboBoxCustomerName.Location = new System.Drawing.Point(119, 101);
             this.comboBoxCustomerName.Name = "comboBoxCustomerName";
-            this.comboBoxCustomerName.Size = new System.Drawing.Size(500, 31);
+            this.comboBoxCustomerName.Size = new System.Drawing.Size(400, 31);
             this.comboBoxCustomerName.TabIndex = 42;
             this.comboBoxCustomerName.SelectedIndexChanged += new System.EventHandler(this.comboBoxCustomerName_SelectedIndexChanged);
             // 
             // textBoxCustomerId
             // 
             this.textBoxCustomerId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustomerId.Location = new System.Drawing.Point(119, 46);
+            this.textBoxCustomerId.Location = new System.Drawing.Point(119, 44);
             this.textBoxCustomerId.Name = "textBoxCustomerId";
             this.textBoxCustomerId.ReadOnly = true;
-            this.textBoxCustomerId.Size = new System.Drawing.Size(500, 30);
+            this.textBoxCustomerId.Size = new System.Drawing.Size(400, 30);
             this.textBoxCustomerId.TabIndex = 41;
             // 
             // label4
@@ -405,6 +400,48 @@
             this.label7.Text = "ID";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 442);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(250, 50);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Expected Return Date";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dateTimePickerReturnDate
+            // 
+            this.dateTimePickerReturnDate.Enabled = false;
+            this.dateTimePickerReturnDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(269, 450);
+            this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
+            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(376, 30);
+            this.dateTimePickerReturnDate.TabIndex = 46;
+            // 
+            // dateTimePickerRentalDate
+            // 
+            this.dateTimePickerRentalDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerRentalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerRentalDate.Location = new System.Drawing.Point(269, 395);
+            this.dateTimePickerRentalDate.Name = "dateTimePickerRentalDate";
+            this.dateTimePickerRentalDate.Size = new System.Drawing.Size(376, 30);
+            this.dateTimePickerRentalDate.TabIndex = 45;
+            this.dateTimePickerRentalDate.ValueChanged += new System.EventHandler(this.dateTimePickerRentalDate_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 387);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 50);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Rental Date";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // groupBox5
             // 
             this.groupBox5.AutoSize = true;
@@ -424,7 +461,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox5.Size = new System.Drawing.Size(732, 281);
+            this.groupBox5.Size = new System.Drawing.Size(632, 281);
             this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Video";
@@ -436,7 +473,7 @@
             this.comboBoxVideoTitle.FormattingEnabled = true;
             this.comboBoxVideoTitle.Location = new System.Drawing.Point(219, 99);
             this.comboBoxVideoTitle.Name = "comboBoxVideoTitle";
-            this.comboBoxVideoTitle.Size = new System.Drawing.Size(500, 31);
+            this.comboBoxVideoTitle.Size = new System.Drawing.Size(400, 31);
             this.comboBoxVideoTitle.TabIndex = 42;
             this.comboBoxVideoTitle.SelectedIndexChanged += new System.EventHandler(this.comboBoxVideoTitle_SelectedIndexChanged);
             // 
@@ -446,7 +483,7 @@
             this.textBoxVideoId.Location = new System.Drawing.Point(219, 44);
             this.textBoxVideoId.Name = "textBoxVideoId";
             this.textBoxVideoId.ReadOnly = true;
-            this.textBoxVideoId.Size = new System.Drawing.Size(500, 30);
+            this.textBoxVideoId.Size = new System.Drawing.Size(400, 30);
             this.textBoxVideoId.TabIndex = 41;
             // 
             // label3
@@ -494,7 +531,7 @@
             // 
             this.numericUpDownRentPrice.Enabled = false;
             this.numericUpDownRentPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownRentPrice.Location = new System.Drawing.Point(569, 154);
+            this.numericUpDownRentPrice.Location = new System.Drawing.Point(469, 210);
             this.numericUpDownRentPrice.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -521,7 +558,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(463, 143);
+            this.label14.Location = new System.Drawing.Point(465, 143);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 50);
             this.label14.TabIndex = 26;
@@ -542,7 +579,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(812, 286);
+            this.label5.Location = new System.Drawing.Point(667, 286);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(250, 50);
@@ -553,10 +590,10 @@
             // textBoxNotes
             // 
             this.textBoxNotes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNotes.Location = new System.Drawing.Point(812, 344);
+            this.textBoxNotes.Location = new System.Drawing.Point(671, 344);
             this.textBoxNotes.Multiline = true;
             this.textBoxNotes.Name = "textBoxNotes";
-            this.textBoxNotes.Size = new System.Drawing.Size(496, 259);
+            this.textBoxNotes.Size = new System.Drawing.Size(399, 262);
             this.textBoxNotes.TabIndex = 38;
             // 
             // buttonRent
@@ -565,7 +602,7 @@
             this.buttonRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRent.ForeColor = System.Drawing.Color.White;
-            this.buttonRent.Location = new System.Drawing.Point(1314, 497);
+            this.buttonRent.Location = new System.Drawing.Point(1076, 500);
             this.buttonRent.Name = "buttonRent";
             this.buttonRent.Size = new System.Drawing.Size(130, 50);
             this.buttonRent.TabIndex = 3;
@@ -579,7 +616,7 @@
             this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReturn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReturn.ForeColor = System.Drawing.Color.White;
-            this.buttonReturn.Location = new System.Drawing.Point(1314, 553);
+            this.buttonReturn.Location = new System.Drawing.Point(1076, 556);
             this.buttonReturn.Name = "buttonReturn";
             this.buttonReturn.Size = new System.Drawing.Size(130, 50);
             this.buttonReturn.TabIndex = 25;
@@ -587,30 +624,9 @@
             this.buttonReturn.UseVisualStyleBackColor = false;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
-            // textBoxRentalId
-            // 
-            this.textBoxRentalId.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRentalId.Location = new System.Drawing.Point(119, 46);
-            this.textBoxRentalId.Name = "textBoxRentalId";
-            this.textBoxRentalId.ReadOnly = true;
-            this.textBoxRentalId.Size = new System.Drawing.Size(1325, 30);
-            this.textBoxRentalId.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 50);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "ID";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // UserControlRental
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
@@ -623,7 +639,7 @@
             this.Controls.Add(this.buttonRetrieveSpecific);
             this.Name = "UserControlRental";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Size = new System.Drawing.Size(1524, 1265);
+            this.Size = new System.Drawing.Size(1282, 1265);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

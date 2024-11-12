@@ -104,7 +104,7 @@
             this.textBoxSearchValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchValue.Location = new System.Drawing.Point(335, 34);
             this.textBoxSearchValue.Name = "textBoxSearchValue";
-            this.textBoxSearchValue.Size = new System.Drawing.Size(783, 30);
+            this.textBoxSearchValue.Size = new System.Drawing.Size(542, 30);
             this.textBoxSearchValue.TabIndex = 26;
             // 
             // buttonRetrieveSpecific
@@ -113,7 +113,7 @@
             this.buttonRetrieveSpecific.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveSpecific.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveSpecific.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(1124, 23);
+            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(883, 23);
             this.buttonRetrieveSpecific.Name = "buttonRetrieveSpecific";
             this.buttonRetrieveSpecific.Size = new System.Drawing.Size(150, 50);
             this.buttonRetrieveSpecific.TabIndex = 6;
@@ -127,7 +127,7 @@
             this.buttonRetrieveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveAll.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveAll.Location = new System.Drawing.Point(1280, 23);
+            this.buttonRetrieveAll.Location = new System.Drawing.Point(1042, 23);
             this.buttonRetrieveAll.Name = "buttonRetrieveAll";
             this.buttonRetrieveAll.Size = new System.Drawing.Size(200, 50);
             this.buttonRetrieveAll.TabIndex = 6;
@@ -159,7 +159,7 @@
             this.groupBox2.Location = new System.Drawing.Point(23, 747);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(1457, 408);
+            this.groupBox2.Size = new System.Drawing.Size(1219, 408);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DETAILS";
@@ -271,11 +271,11 @@
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.Location = new System.Drawing.Point(944, 322);
+            this.buttonCreate.Location = new System.Drawing.Point(1106, 199);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(200, 50);
+            this.buttonCreate.Size = new System.Drawing.Size(100, 61);
             this.buttonCreate.TabIndex = 3;
-            this.buttonCreate.Text = "Register Video";
+            this.buttonCreate.Text = "Register\r\nVideo";
             this.buttonCreate.UseVisualStyleBackColor = false;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreateVideoRecord_Click);
             // 
@@ -295,7 +295,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(241)))), ((int)(((byte)(231)))));
-            this.buttonDelete.Location = new System.Drawing.Point(1344, 322);
+            this.buttonDelete.Location = new System.Drawing.Point(1106, 322);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(100, 50);
             this.buttonDelete.TabIndex = 25;
@@ -306,11 +306,11 @@
             // textBoxSynopsis
             // 
             this.textBoxSynopsis.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSynopsis.Location = new System.Drawing.Point(944, 159);
+            this.textBoxSynopsis.Location = new System.Drawing.Point(792, 199);
             this.textBoxSynopsis.Multiline = true;
             this.textBoxSynopsis.Name = "textBoxSynopsis";
             this.textBoxSynopsis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSynopsis.Size = new System.Drawing.Size(500, 157);
+            this.textBoxSynopsis.Size = new System.Drawing.Size(308, 173);
             this.textBoxSynopsis.TabIndex = 23;
             // 
             // buttonUpdate
@@ -319,7 +319,7 @@
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(1238, 322);
+            this.buttonUpdate.Location = new System.Drawing.Point(1106, 266);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(100, 50);
             this.buttonUpdate.TabIndex = 7;
@@ -411,7 +411,7 @@
             this.dateTimePickerReleaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerReleaseDate.Location = new System.Drawing.Point(944, 101);
             this.dateTimePickerReleaseDate.Name = "dateTimePickerReleaseDate";
-            this.dateTimePickerReleaseDate.Size = new System.Drawing.Size(500, 30);
+            this.dateTimePickerReleaseDate.Size = new System.Drawing.Size(262, 30);
             this.dateTimePickerReleaseDate.TabIndex = 20;
             // 
             // label5
@@ -462,7 +462,7 @@
             this.textBoxDirector.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDirector.Location = new System.Drawing.Point(944, 46);
             this.textBoxDirector.Name = "textBoxDirector";
-            this.textBoxDirector.Size = new System.Drawing.Size(500, 30);
+            this.textBoxDirector.Size = new System.Drawing.Size(262, 30);
             this.textBoxDirector.TabIndex = 8;
             // 
             // textBoxTitle
@@ -484,7 +484,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.AutoSize = true;
             this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox4.Controls.Add(this.buttonSubmitNewQty);
             this.groupBox4.Controls.Add(this.label13);
@@ -493,13 +492,13 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.comboBoxNewQtyOperation);
             this.groupBox4.Controls.Add(this.textBoxVideoIdNewIn);
-            this.groupBox4.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(23, 602);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox4.Size = new System.Drawing.Size(1457, 122);
+            this.groupBox4.Size = new System.Drawing.Size(1219, 122);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "STOCK";
@@ -510,7 +509,7 @@
             this.buttonSubmitNewQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmitNewQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmitNewQty.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmitNewQty.Location = new System.Drawing.Point(1294, 36);
+            this.buttonSubmitNewQty.Location = new System.Drawing.Point(1056, 36);
             this.buttonSubmitNewQty.Name = "buttonSubmitNewQty";
             this.buttonSubmitNewQty.Size = new System.Drawing.Size(150, 50);
             this.buttonSubmitNewQty.TabIndex = 28;
@@ -596,11 +595,15 @@
             this.dataGridViewVideoLibrary.AllowUserToDeleteRows = false;
             this.dataGridViewVideoLibrary.AllowUserToOrderColumns = true;
             this.dataGridViewVideoLibrary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewVideoLibrary.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewVideoLibrary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewVideoLibrary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewVideoLibrary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -608,9 +611,9 @@
             this.dataGridViewVideoLibrary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -621,7 +624,7 @@
             this.dataGridViewVideoLibrary.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -631,7 +634,7 @@
             this.dataGridViewVideoLibrary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewVideoLibrary.RowTemplate.Height = 24;
             this.dataGridViewVideoLibrary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewVideoLibrary.Size = new System.Drawing.Size(1457, 500);
+            this.dataGridViewVideoLibrary.Size = new System.Drawing.Size(1219, 500);
             this.dataGridViewVideoLibrary.TabIndex = 27;
             this.dataGridViewVideoLibrary.SelectionChanged += new System.EventHandler(this.dataGridViewVideoLibrary_SelectionChanged);
             // 
@@ -647,8 +650,7 @@
             // 
             // UserControlVideoLibrary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
@@ -660,9 +662,10 @@
             this.Controls.Add(this.textBoxSearchValue);
             this.Controls.Add(this.buttonRetrieveAll);
             this.Controls.Add(this.buttonRetrieveSpecific);
+            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlVideoLibrary";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Size = new System.Drawing.Size(1503, 1175);
+            this.Size = new System.Drawing.Size(1282, 1175);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);

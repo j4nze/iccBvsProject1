@@ -28,11 +28,10 @@ namespace iccBvsProject1.Views
             comboBoxNewQtyOperation.SelectedIndex = 0;
             comboBoxSearchBy.SelectedIndex = 0;
 
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
         }
 
-        public void ReloadList()
+        public void LoadList()
         {
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
@@ -79,8 +78,7 @@ namespace iccBvsProject1.Views
         private void buttonVideoRetrieveAll_Click(object sender, EventArgs e)
         {
             dt.Clear();
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
         }
 
         private void buttonCreateVideoRecord_Click(object sender, EventArgs e)
@@ -104,8 +102,7 @@ namespace iccBvsProject1.Views
             vc.Create(vm);
 
             dt.Clear();
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
 
             UCR.LoadVideoCombobox();
         }
@@ -121,8 +118,7 @@ namespace iccBvsProject1.Views
             vc.UpdateQty(vm);
 
             dt.Clear();
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
 
             UCR.LoadVideoCombobox();
         }
@@ -141,8 +137,7 @@ namespace iccBvsProject1.Views
             vc.Update(vm);
 
             dt.Clear();
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
 
             UCR.LoadVideoCombobox();
         }
@@ -154,8 +149,7 @@ namespace iccBvsProject1.Views
             vc.Delete(vm);
 
             dt.Clear();
-            dt = vc.RetrieveAll();
-            dataGridViewVideoLibrary.DataSource = dt;
+            LoadList();
 
             UCR.LoadVideoCombobox();
         }

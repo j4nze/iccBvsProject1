@@ -56,7 +56,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.AutoSize = true;
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.textBoxAddress);
@@ -75,8 +74,8 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(23, 616);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.groupBox2.Size = new System.Drawing.Size(1457, 298);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.groupBox2.Size = new System.Drawing.Size(1219, 298);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DETAILS";
@@ -97,13 +96,13 @@
             this.textBoxAddress.Location = new System.Drawing.Point(119, 156);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(1019, 106);
+            this.textBoxAddress.Size = new System.Drawing.Size(781, 106);
             this.textBoxAddress.TabIndex = 38;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(738, 88);
+            this.label1.Location = new System.Drawing.Point(700, 88);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 50);
@@ -114,9 +113,9 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(844, 101);
+            this.textBoxEmail.Location = new System.Drawing.Point(806, 99);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(600, 30);
+            this.textBoxEmail.Size = new System.Drawing.Size(400, 30);
             this.textBoxEmail.TabIndex = 36;
             // 
             // buttonCreate
@@ -125,7 +124,7 @@
             this.buttonCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.Location = new System.Drawing.Point(1144, 156);
+            this.buttonCreate.Location = new System.Drawing.Point(906, 156);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(300, 50);
             this.buttonCreate.TabIndex = 3;
@@ -139,7 +138,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(1304, 212);
+            this.buttonDelete.Location = new System.Drawing.Point(1066, 212);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(140, 50);
             this.buttonDelete.TabIndex = 25;
@@ -153,7 +152,7 @@
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(1144, 212);
+            this.buttonUpdate.Location = new System.Drawing.Point(906, 212);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(140, 50);
             this.buttonUpdate.TabIndex = 7;
@@ -175,7 +174,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(738, 33);
+            this.label3.Location = new System.Drawing.Point(700, 33);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 50);
@@ -199,15 +198,15 @@
             this.textBoxMobile.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMobile.Location = new System.Drawing.Point(119, 101);
             this.textBoxMobile.Name = "textBoxMobile";
-            this.textBoxMobile.Size = new System.Drawing.Size(600, 30);
+            this.textBoxMobile.Size = new System.Drawing.Size(400, 30);
             this.textBoxMobile.TabIndex = 8;
             // 
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(844, 46);
+            this.textBoxName.Location = new System.Drawing.Point(806, 44);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(600, 30);
+            this.textBoxName.Size = new System.Drawing.Size(400, 30);
             this.textBoxName.TabIndex = 7;
             // 
             // textBoxId
@@ -216,7 +215,7 @@
             this.textBoxId.Location = new System.Drawing.Point(119, 46);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.ReadOnly = true;
-            this.textBoxId.Size = new System.Drawing.Size(600, 30);
+            this.textBoxId.Size = new System.Drawing.Size(400, 30);
             this.textBoxId.TabIndex = 6;
             // 
             // dataGridViewCustomerLibrary
@@ -224,12 +223,18 @@
             this.dataGridViewCustomerLibrary.AllowUserToAddRows = false;
             this.dataGridViewCustomerLibrary.AllowUserToDeleteRows = false;
             this.dataGridViewCustomerLibrary.AllowUserToOrderColumns = true;
+            this.dataGridViewCustomerLibrary.AllowUserToResizeColumns = false;
+            this.dataGridViewCustomerLibrary.AllowUserToResizeRows = false;
             this.dataGridViewCustomerLibrary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCustomerLibrary.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewCustomerLibrary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewCustomerLibrary.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewCustomerLibrary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -239,7 +244,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -252,7 +257,7 @@
             this.dataGridViewCustomerLibrary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewCustomerLibrary.RowTemplate.Height = 24;
             this.dataGridViewCustomerLibrary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustomerLibrary.Size = new System.Drawing.Size(1457, 500);
+            this.dataGridViewCustomerLibrary.Size = new System.Drawing.Size(1219, 500);
             this.dataGridViewCustomerLibrary.TabIndex = 27;
             this.dataGridViewCustomerLibrary.SelectionChanged += new System.EventHandler(this.dataGridViewCustomerLibrary_SelectionChanged);
             // 
@@ -264,7 +269,7 @@
             this.comboBoxSearchBy.Items.AddRange(new object[] {
             "by ID",
             "by Name"});
-            this.comboBoxSearchBy.Location = new System.Drawing.Point(129, 48);
+            this.comboBoxSearchBy.Location = new System.Drawing.Point(129, 34);
             this.comboBoxSearchBy.Name = "comboBoxSearchBy";
             this.comboBoxSearchBy.Size = new System.Drawing.Size(200, 31);
             this.comboBoxSearchBy.TabIndex = 26;
@@ -272,9 +277,9 @@
             // textBoxSearchValue
             // 
             this.textBoxSearchValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchValue.Location = new System.Drawing.Point(335, 48);
+            this.textBoxSearchValue.Location = new System.Drawing.Point(335, 34);
             this.textBoxSearchValue.Name = "textBoxSearchValue";
-            this.textBoxSearchValue.Size = new System.Drawing.Size(783, 30);
+            this.textBoxSearchValue.Size = new System.Drawing.Size(545, 30);
             this.textBoxSearchValue.TabIndex = 26;
             // 
             // label11
@@ -293,7 +298,7 @@
             this.buttonRetrieveSpecific.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveSpecific.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveSpecific.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(1124, 37);
+            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(886, 23);
             this.buttonRetrieveSpecific.Name = "buttonRetrieveSpecific";
             this.buttonRetrieveSpecific.Size = new System.Drawing.Size(150, 50);
             this.buttonRetrieveSpecific.TabIndex = 6;
@@ -307,7 +312,7 @@
             this.buttonRetrieveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRetrieveAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRetrieveAll.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveAll.Location = new System.Drawing.Point(1280, 37);
+            this.buttonRetrieveAll.Location = new System.Drawing.Point(1042, 23);
             this.buttonRetrieveAll.Name = "buttonRetrieveAll";
             this.buttonRetrieveAll.Size = new System.Drawing.Size(200, 50);
             this.buttonRetrieveAll.TabIndex = 6;
@@ -317,10 +322,8 @@
             // 
             // UserControlCustomerLibrary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dataGridViewCustomerLibrary);
@@ -331,8 +334,8 @@
             this.Controls.Add(this.buttonRetrieveSpecific);
             this.Controls.Add(this.label11);
             this.Name = "UserControlCustomerLibrary";
-            this.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
-            this.Size = new System.Drawing.Size(1503, 937);
+            this.Padding = new System.Windows.Forms.Padding(20);
+            this.Size = new System.Drawing.Size(1282, 937);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomerLibrary)).EndInit();

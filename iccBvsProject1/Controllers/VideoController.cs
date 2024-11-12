@@ -33,7 +33,36 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
-        
+
+        public int RetrieveAllVideoCount()
+        {
+            int totalVideoQtyCount = 0;
+
+            try
+            {
+                // 7. SQL Introduction
+                // Context #8: SQL Select Statement
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT SUM(in_qty) FROM Video", conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out totalVideoQtyCount)) return totalVideoQtyCount;
+                        else return 0;
+
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return totalVideoQtyCount;
+        }
+
         public DataTable RetrieveSpecific(VideoModel vm)
         {
             DataTable dt = new DataTable();
@@ -73,6 +102,8 @@ namespace iccBvsProject1.Controllers
 
             try
             {
+                // 7. SQL Introduction
+                // Context #8: SQL Select Statement
                 using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
                 {
                     conn.Open();

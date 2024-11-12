@@ -28,200 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridViewRental = new System.Windows.Forms.DataGridView();
-            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
-            this.textBoxSearchValue = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.buttonRetrieveAll = new System.Windows.Forms.Button();
-            this.buttonRetrieveSpecific = new System.Windows.Forms.Button();
+            this.dataGridViewRent = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTotalRent = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelTotalOverduedRent = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelTotalReturnProfit = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).BeginInit();
+            this.labelTotalVideo = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRent)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridViewRental
+            // dataGridViewRent
             // 
-            this.dataGridViewRental.AllowUserToAddRows = false;
-            this.dataGridViewRental.AllowUserToDeleteRows = false;
-            this.dataGridViewRental.AllowUserToOrderColumns = true;
-            this.dataGridViewRental.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewRent.AllowUserToAddRows = false;
+            this.dataGridViewRent.AllowUserToDeleteRows = false;
+            this.dataGridViewRent.AllowUserToOrderColumns = true;
+            this.dataGridViewRent.AllowUserToResizeColumns = false;
+            this.dataGridViewRent.AllowUserToResizeRows = false;
+            this.dataGridViewRent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewRent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewRent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewRent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewRent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(20);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewRent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewRent.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewRent.Location = new System.Drawing.Point(20, 234);
+            this.dataGridViewRent.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewRent.Name = "dataGridViewRent";
+            this.dataGridViewRent.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(20);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRental.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewRental.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewRental.Location = new System.Drawing.Point(23, 252);
-            this.dataGridViewRental.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
-            this.dataGridViewRental.Name = "dataGridViewRental";
-            this.dataGridViewRental.ReadOnly = true;
-            this.dataGridViewRental.RowHeadersWidth = 51;
-            this.dataGridViewRental.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewRental.RowTemplate.Height = 24;
-            this.dataGridViewRental.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRental.Size = new System.Drawing.Size(1457, 500);
-            this.dataGridViewRental.TabIndex = 33;
-            // 
-            // comboBoxSearchBy
-            // 
-            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSearchBy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSearchBy.FormattingEnabled = true;
-            this.comboBoxSearchBy.Items.AddRange(new object[] {
-            "by Rental ID",
-            "by Video Title",
-            "by Customer Name"});
-            this.comboBoxSearchBy.Location = new System.Drawing.Point(129, 207);
-            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
-            this.comboBoxSearchBy.Size = new System.Drawing.Size(250, 31);
-            this.comboBoxSearchBy.TabIndex = 30;
-            // 
-            // textBoxSearchValue
-            // 
-            this.textBoxSearchValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchValue.Location = new System.Drawing.Point(385, 207);
-            this.textBoxSearchValue.Name = "textBoxSearchValue";
-            this.textBoxSearchValue.Size = new System.Drawing.Size(733, 30);
-            this.textBoxSearchValue.TabIndex = 31;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 196);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 50);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Search";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonRetrieveAll
-            // 
-            this.buttonRetrieveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(116)))), ((int)(((byte)(120)))));
-            this.buttonRetrieveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRetrieveAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRetrieveAll.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveAll.Location = new System.Drawing.Point(1280, 196);
-            this.buttonRetrieveAll.Name = "buttonRetrieveAll";
-            this.buttonRetrieveAll.Size = new System.Drawing.Size(200, 50);
-            this.buttonRetrieveAll.TabIndex = 28;
-            this.buttonRetrieveAll.Text = "Display All";
-            this.buttonRetrieveAll.UseVisualStyleBackColor = false;
-            // 
-            // buttonRetrieveSpecific
-            // 
-            this.buttonRetrieveSpecific.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(116)))), ((int)(((byte)(120)))));
-            this.buttonRetrieveSpecific.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRetrieveSpecific.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRetrieveSpecific.ForeColor = System.Drawing.Color.White;
-            this.buttonRetrieveSpecific.Location = new System.Drawing.Point(1124, 196);
-            this.buttonRetrieveSpecific.Name = "buttonRetrieveSpecific";
-            this.buttonRetrieveSpecific.Size = new System.Drawing.Size(150, 50);
-            this.buttonRetrieveSpecific.TabIndex = 29;
-            this.buttonRetrieveSpecific.Text = "Find";
-            this.buttonRetrieveSpecific.UseVisualStyleBackColor = false;
+            this.dataGridViewRent.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewRent.RowHeadersWidth = 51;
+            this.dataGridViewRent.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewRent.RowTemplate.Height = 24;
+            this.dataGridViewRent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRent.Size = new System.Drawing.Size(1221, 477);
+            this.dataGridViewRent.TabIndex = 33;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(173)))), ((int)(((byte)(179)))));
-            this.panel1.Location = new System.Drawing.Point(23, 23);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 3, 48, 3);
+            this.panel1.Controls.Add(this.labelTotalRent);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 30, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 150);
+            this.panel1.Size = new System.Drawing.Size(280, 150);
             this.panel1.TabIndex = 34;
+            // 
+            // labelTotalRent
+            // 
+            this.labelTotalRent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalRent.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalRent.ForeColor = System.Drawing.Color.White;
+            this.labelTotalRent.Location = new System.Drawing.Point(0, 72);
+            this.labelTotalRent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalRent.Name = "labelTotalRent";
+            this.labelTotalRent.Padding = new System.Windows.Forms.Padding(14);
+            this.labelTotalRent.Size = new System.Drawing.Size(280, 78);
+            this.labelTotalRent.TabIndex = 1;
+            this.labelTotalRent.Text = "0";
+            this.labelTotalRent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(14);
+            this.label1.Size = new System.Drawing.Size(280, 72);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Rent ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(173)))), ((int)(((byte)(179)))));
-            this.panel2.Location = new System.Drawing.Point(324, 23);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 48, 3);
+            this.panel2.Controls.Add(this.labelTotalOverduedRent);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(330, 20);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 150);
+            this.panel2.Size = new System.Drawing.Size(280, 150);
             this.panel2.TabIndex = 35;
+            // 
+            // labelTotalOverduedRent
+            // 
+            this.labelTotalOverduedRent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalOverduedRent.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalOverduedRent.ForeColor = System.Drawing.Color.White;
+            this.labelTotalOverduedRent.Location = new System.Drawing.Point(0, 72);
+            this.labelTotalOverduedRent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalOverduedRent.Name = "labelTotalOverduedRent";
+            this.labelTotalOverduedRent.Padding = new System.Windows.Forms.Padding(14);
+            this.labelTotalOverduedRent.Size = new System.Drawing.Size(280, 78);
+            this.labelTotalOverduedRent.TabIndex = 3;
+            this.labelTotalOverduedRent.Text = "0";
+            this.labelTotalOverduedRent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(14);
+            this.label4.Size = new System.Drawing.Size(280, 72);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Overdued Rent";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(173)))), ((int)(((byte)(179)))));
-            this.panel3.Location = new System.Drawing.Point(1230, 23);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.panel3.Controls.Add(this.labelTotalReturnProfit);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(961, 20);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 150);
+            this.panel3.Size = new System.Drawing.Size(280, 150);
             this.panel3.TabIndex = 35;
+            // 
+            // labelTotalReturnProfit
+            // 
+            this.labelTotalReturnProfit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalReturnProfit.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalReturnProfit.ForeColor = System.Drawing.Color.White;
+            this.labelTotalReturnProfit.Location = new System.Drawing.Point(0, 72);
+            this.labelTotalReturnProfit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalReturnProfit.Name = "labelTotalReturnProfit";
+            this.labelTotalReturnProfit.Padding = new System.Windows.Forms.Padding(14);
+            this.labelTotalReturnProfit.Size = new System.Drawing.Size(280, 78);
+            this.labelTotalReturnProfit.TabIndex = 3;
+            this.labelTotalReturnProfit.Text = "0";
+            this.labelTotalReturnProfit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(14);
+            this.label8.Size = new System.Drawing.Size(280, 72);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Revenue (Return)";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(173)))), ((int)(((byte)(179)))));
-            this.panel4.Location = new System.Drawing.Point(929, 23);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 3, 48, 3);
+            this.panel4.Controls.Add(this.labelTotalVideo);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Location = new System.Drawing.Point(647, 20);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 150);
+            this.panel4.Size = new System.Drawing.Size(280, 150);
             this.panel4.TabIndex = 35;
             // 
-            // panel5
+            // labelTotalVideo
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(173)))), ((int)(((byte)(179)))));
-            this.panel5.Location = new System.Drawing.Point(625, 23);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 48, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(253, 150);
-            this.panel5.TabIndex = 35;
+            this.labelTotalVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalVideo.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalVideo.ForeColor = System.Drawing.Color.White;
+            this.labelTotalVideo.Location = new System.Drawing.Point(0, 72);
+            this.labelTotalVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalVideo.Name = "labelTotalVideo";
+            this.labelTotalVideo.Padding = new System.Windows.Forms.Padding(14);
+            this.labelTotalVideo.Size = new System.Drawing.Size(280, 78);
+            this.labelTotalVideo.TabIndex = 3;
+            this.labelTotalVideo.Text = "0";
+            this.labelTotalVideo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(14);
+            this.label6.Size = new System.Drawing.Size(280, 72);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Video";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(16, 190);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(280, 40);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Rent ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UserControlDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridViewRent);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewRental);
-            this.Controls.Add(this.comboBoxSearchBy);
-            this.Controls.Add(this.textBoxSearchValue);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.buttonRetrieveAll);
-            this.Controls.Add(this.buttonRetrieveSpecific);
+            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlDashboard";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Size = new System.Drawing.Size(1503, 1175);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRental)).EndInit();
+            this.Size = new System.Drawing.Size(1282, 745);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRent)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewRental;
-        private System.Windows.Forms.ComboBox comboBoxSearchBy;
-        private System.Windows.Forms.TextBox textBoxSearchValue;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonRetrieveAll;
-        private System.Windows.Forms.Button buttonRetrieveSpecific;
+        private System.Windows.Forms.DataGridView dataGridViewRent;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTotalRent;
+        private System.Windows.Forms.Label labelTotalOverduedRent;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelTotalReturnProfit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelTotalVideo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }

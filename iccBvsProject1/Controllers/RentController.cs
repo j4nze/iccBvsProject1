@@ -55,7 +55,90 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
- 
+
+        public DataTable RetrieveAllRent()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+                    // 7. SQL Introduction
+                    // Context #8: SQL Select Statement (with condition)
+                    using (SqlCommand cmd = new SqlCommand("SELECT rent_id, customer_id, video_id, overdue_days, overdue_price, total_price, rental_date, expected_return_date FROM RENTAL where status = 'RENTED';", conn))
+                    {
+                        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                        adp.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return dt;
+        }
+
+        public int RetrieveAllRentCount()
+        {
+            int totalRentCount = 0;
+
+            try
+            {
+                // 7. SQL Introduction
+                // Context #8: SQL Select Statement
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM RENTAL WHERE status = 'RENTED';", conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out totalRentCount)) return totalRentCount;
+                        else return 0;
+
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return totalRentCount;
+        }
+
+        public int RetrieveTotalReturnRevenue()
+        {
+            int totalReturnRevenue = 0;
+
+            try
+            {
+                // 7. SQL Introduction
+                // Context #8: SQL Select Statement
+                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("SELECT SUM(total_price) FROM RENTAL WHERE status = 'RETURNED';", conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && int.TryParse(result.ToString(), out totalReturnRevenue)) return totalReturnRevenue;
+                        else return 0;
+
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
+            return totalReturnRevenue;
+        }
+
         public DataTable RetrieveSpecific(RentModel rm)
         {
             DataTable dt = new DataTable();
