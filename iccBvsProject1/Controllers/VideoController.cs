@@ -349,6 +349,18 @@ namespace iccBvsProject1.Controllers
                     }
                 }
             }
+            catch (SqlException sqlExc)
+            {
+                if (sqlExc.Number == 547)
+                {
+                    MessageBox.Show("Failed. This video is currently used in the rental record/s.");
+                }
+                else
+                {
+                    // For other SQL exceptions
+                    MessageBox.Show($"SQL Error: {sqlExc.Message}");
+                }
+            }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);

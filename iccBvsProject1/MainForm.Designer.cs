@@ -207,11 +207,10 @@
             this.ucDashboard.AutoScroll = true;
             this.ucDashboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ucDashboard.BackColor = System.Drawing.Color.White;
-            this.ucDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDashboard.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucDashboard.Location = new System.Drawing.Point(400, 108);
             this.ucDashboard.Margin = new System.Windows.Forms.Padding(6);
             this.ucDashboard.Name = "ucDashboard";
-            this.ucDashboard.Padding = new System.Windows.Forms.Padding(20);
             this.ucDashboard.Size = new System.Drawing.Size(1282, 745);
             this.ucDashboard.TabIndex = 6;
             // 
