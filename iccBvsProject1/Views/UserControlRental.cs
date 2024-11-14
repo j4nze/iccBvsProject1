@@ -17,22 +17,17 @@ namespace iccBvsProject1.Views
     public partial class UserControlRental : UserControl
     {
         public UserControlVideoLibrary UCV { get; set; }
+        public UserControlDashboard UCD { get; set; }
         private RentModel rm = new RentModel();
         private VideoModel vm = new VideoModel();
         private CustomerController cc = new CustomerController();
         private VideoController vc = new VideoController();
         private RentController rc = new RentController();
         private DataTable dt;
-        private Timer timeChecker;
 
         public UserControlRental()
         {
             InitializeComponent();
-
-            timeChecker = new Timer();
-            timeChecker.Interval = 3600000;
-            timeChecker.Tick += (s, e) => CheckOverdue();
-            timeChecker.Start();
 
             LoadCustomerCombobox();
             LoadVideoCombobox();
@@ -42,10 +37,15 @@ namespace iccBvsProject1.Views
             textBoxStatus.Text = "RENTED";
             comboBoxSearchBy.SelectedIndex = 0;
 
-            dt = rc.RetrieveAll();
-            dataGridViewRental.DataSource = dt;
+            LoadList();
 
             dateTimePickerReturnDate.Value = dateTimePickerRentalDate.Value.AddDays((int)numericUpDownRentLimit.Value);
+        }
+
+        public void LoadList()
+        {
+            dt = rc.RetrieveAll();
+            dataGridViewRental.DataSource = dt;
         }
 
         public void LoadCustomerCombobox()
@@ -70,11 +70,11 @@ namespace iccBvsProject1.Views
 
             foreach (var item in list)
             {
-                comboBoxVideoTitle.Items.Add(item);
+                comboBoxVideoTitle.Items.Add(item);  
             }
         }
 
-        private void dataGridViewRental_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewRental_SelectionChanged(object sender, EventArgs e)    
         {
             if (dataGridViewRental.SelectedRows.Count > 0)
             {
@@ -111,7 +111,6 @@ namespace iccBvsProject1.Views
             }
 
             dateTimePickerReturnDate.Value = dateTimePickerRentalDate.Value.AddDays((int)numericUpDownRentLimit.Value);
-            numericUpDownTotalPrice.Value = numericUpDownRentPrice.Value + numericUpDownOverduePrice.Value;
 
             CheckOverdue();
         }
@@ -132,8 +131,6 @@ namespace iccBvsProject1.Views
             dateTimePickerReturnDate.Value = dateTimePickerRentalDate.Value.AddDays((int)numericUpDownRentLimit.Value);
 
             CheckOverdue();
-
-            numericUpDownTotalPrice.Value = numericUpDownRentPrice.Value + numericUpDownOverduePrice.Value;
         }
 
         private void buttonRent_Click(object sender, EventArgs e)
@@ -163,6 +160,7 @@ namespace iccBvsProject1.Views
             dataGridViewRental.DataSource = dt;
 
             UCV.LoadList();
+            UCD.LoadSummary();
         }
 
         private void buttonRetrieveSpecific_Click(object sender, EventArgs e)
@@ -193,6 +191,9 @@ namespace iccBvsProject1.Views
             dt.Clear();
             dt = rc.RetrieveAll();
             dataGridViewRental.DataSource = dt;
+
+            UCV.LoadList();
+            UCD.LoadSummary();
         }
 
         private void CheckOverdue()
@@ -210,6 +211,24 @@ namespace iccBvsProject1.Views
                 numericUpDownOverdueDayCount.Value = 0;
                 numericUpDownOverduePrice.Value = 0;
             }
+
+            numericUpDownTotalPrice.Value = numericUpDownRentPrice.Value + numericUpDownOverduePrice.Value;
+        }
+
+        // Suppress any keys to video title combobox
+        private void comboBoxVideoTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void comboBoxVideoTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void comboBoxVideoTitle_KeyUp(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

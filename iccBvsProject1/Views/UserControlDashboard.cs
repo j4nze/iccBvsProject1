@@ -14,7 +14,6 @@ namespace iccBvsProject1.Views
 {
     public partial class UserControlDashboard : UserControl
     {
-        private CustomerController cc = new CustomerController();
         private VideoController vc = new VideoController();
         private RentController rc = new RentController();
         private DataTable dt;

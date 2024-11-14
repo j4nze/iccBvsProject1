@@ -19,7 +19,7 @@ namespace iccBvsProject1.Controllers
                     conn.Open();
                     // 7. SQL Introduction
                     // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Video", conn))
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Video ORDER BY title", conn))
                     {
                         SqlDataAdapter adp = new SqlDataAdapter(cmd);
                         adp.Fill(dt);
@@ -74,9 +74,9 @@ namespace iccBvsProject1.Controllers
                     string query = "";
                     // 7. SQL Introduction
                     // Context #8: SQL Select Statement (with Logical Operator (LIKE))
-                    if (vm.SearchBy == 0) query = "SELECT * FROM Video WHERE video_id LIKE @SearchValue";
+                    if (vm.SearchBy == 0) query = "SELECT * FROM Video WHERE video_id LIKE @SearchValue ORDER BY title";
 
-                    if (vm.SearchBy == 1) query = "SELECT * FROM Video WHERE title LIKE @SearchValue";
+                    if (vm.SearchBy == 1) query = "SELECT * FROM Video WHERE title LIKE @SearchValue ORDER BY title";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -137,7 +137,7 @@ namespace iccBvsProject1.Controllers
                     conn.Open();
                     // 7. SQL Introduction
                     // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT video_id, title, format, rent_limit, price FROM Video ORDER BY title", conn))
+                    using (SqlCommand cmd = new SqlCommand("SELECT video_id, title, format, rent_limit, price, in_qty FROM Video WHERE in_qty > 0 ORDER BY title", conn))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {

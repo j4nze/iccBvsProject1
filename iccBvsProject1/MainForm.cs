@@ -20,8 +20,10 @@ namespace iccBvsProject1
             InitializeUserControls();
 
             ucVideoLibrary.UCR = ucRental;  // enable ucVideoLibrary to have access (ex. calling methods) in the ucRental
-            ucCustomerLibrary.UCR = ucRental;   // enable ucCustomerLibrary to have access (ex. calling methods) in the ucRental
+            ucVideoLibrary.UCD = ucDashboard;
+            ucCustomerLibrary.UCR = ucRental;
             ucRental.UCV = ucVideoLibrary;
+            ucRental.UCD = ucDashboard;
 
             ShowUserControl(ucDashboard);
             labelSectionHeader.Text = "Dashboard";

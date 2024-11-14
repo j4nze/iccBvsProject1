@@ -16,9 +16,11 @@ namespace iccBvsProject1.Views
     public partial class UserControlVideoLibrary : UserControl
     {
         public UserControlRental UCR { get; set; }  // holds reference from this uc
+        public UserControlDashboard UCD { get; set; }
         private VideoModel vm = new VideoModel();
         private VideoController vc = new VideoController();
         private DataTable dt;
+        private bool isComboboxVideoFormatUsed = true;  // to avoid video format selection changed interaction when selecting in the list
 
         public UserControlVideoLibrary()
         {
@@ -36,15 +38,11 @@ namespace iccBvsProject1.Views
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
         }
-
-        private void comboBoxVideoFormat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxFormat.SelectedIndex == 0) numericUpDownRentPrice.Value = 25;
-            else if (comboBoxFormat.SelectedIndex == 1) numericUpDownRentPrice.Value = 50;
-        }
-
+        
         private void dataGridViewVideoLibrary_SelectionChanged(object sender, EventArgs e)
         {
+            isComboboxVideoFormatUsed = false;
+
             if (dataGridViewVideoLibrary.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewVideoLibrary.SelectedRows[0];
@@ -62,6 +60,17 @@ namespace iccBvsProject1.Views
                 textBoxSynopsis.Text = selectedRow.Cells["synopsis"].Value.ToString();
 
                 textBoxVideoIdNewIn.Text = selectedRow.Cells["video_id"].Value.ToString();
+            }
+
+            isComboboxVideoFormatUsed = true;
+        }
+
+        private void comboBoxVideoFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isComboboxVideoFormatUsed)
+            {
+                if (comboBoxFormat.SelectedIndex == 0) numericUpDownRentPrice.Value = 25;
+                else if (comboBoxFormat.SelectedIndex == 1) numericUpDownRentPrice.Value = 50;
             }
         }
 
@@ -105,6 +114,7 @@ namespace iccBvsProject1.Views
             LoadList();
 
             UCR.LoadVideoCombobox();
+            UCD.LoadSummary();
         }
 
         private void buttonSubmitStockQtyOperation_Click(object sender, EventArgs e)
@@ -140,6 +150,7 @@ namespace iccBvsProject1.Views
             LoadList();
 
             UCR.LoadVideoCombobox();
+            UCR.LoadList();
         }
 
 
@@ -152,6 +163,7 @@ namespace iccBvsProject1.Views
             LoadList();
 
             UCR.LoadVideoCombobox();
+            UCD.LoadSummary();
         }
     }
 }

@@ -251,6 +251,7 @@
             this.dataGridViewCustomerLibrary.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCustomerLibrary.Location = new System.Drawing.Point(23, 93);
             this.dataGridViewCustomerLibrary.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.dataGridViewCustomerLibrary.MultiSelect = false;
             this.dataGridViewCustomerLibrary.Name = "dataGridViewCustomerLibrary";
             this.dataGridViewCustomerLibrary.ReadOnly = true;
             this.dataGridViewCustomerLibrary.RowHeadersWidth = 51;

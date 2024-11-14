@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
             this.textBoxSearchValue = new System.Windows.Forms.TextBox();
             this.buttonRetrieveSpecific = new System.Windows.Forms.Button();
@@ -620,16 +619,9 @@
             this.dataGridViewVideoLibrary.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewVideoLibrary.Location = new System.Drawing.Point(23, 79);
             this.dataGridViewVideoLibrary.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.dataGridViewVideoLibrary.MultiSelect = false;
             this.dataGridViewVideoLibrary.Name = "dataGridViewVideoLibrary";
             this.dataGridViewVideoLibrary.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewVideoLibrary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewVideoLibrary.RowHeadersWidth = 51;
             this.dataGridViewVideoLibrary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewVideoLibrary.RowTemplate.Height = 24;
