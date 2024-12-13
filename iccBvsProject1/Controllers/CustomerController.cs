@@ -37,41 +37,7 @@ namespace iccBvsProject1.Controllers
 
             return dt;
         }
-        
-        public List<Models.CustomerNameComboBoxItem> RetrieveAllNames()
-        {
-            var list = new List<Models.CustomerNameComboBoxItem>();
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-                    // 7. SQL Introduction
-                    // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT customer_id, name FROM Customer ORDER BY name", conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string id = reader["customer_id"].ToString();
-                                string name = reader["name"].ToString();
-
-                                list.Add(new Models.CustomerNameComboBoxItem(id, name));
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-
-            return list;
-        }
-        
         public DataTable RetrieveSpecific(CustomerModel cm)
         {
             DataTable dt = new DataTable();

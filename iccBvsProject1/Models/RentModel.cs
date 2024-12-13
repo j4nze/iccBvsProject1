@@ -11,6 +11,7 @@ namespace iccBvsProject1.Models
         // rent table
         public string Id { get; set; }
         public DateTime RentalDate { get; set; }
+        public DateTime ExpectedReturnDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public int OverdueDays { get; set; }
         public int OverduePrice { get; set; }

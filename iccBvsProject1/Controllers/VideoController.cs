@@ -34,35 +34,6 @@ namespace iccBvsProject1.Controllers
             return dt;
         }
 
-        public int RetrieveAllVideoCount()
-        {
-            int totalVideoQtyCount = 0;
-
-            try
-            {
-                // 7. SQL Introduction
-                // Context #8: SQL Select Statement
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-
-                    using (SqlCommand cmd = new SqlCommand("SELECT SUM(in_qty) FROM Video", conn))
-                    {
-                        object result = cmd.ExecuteScalar();
-                        if (result != null && int.TryParse(result.ToString(), out totalVideoQtyCount)) return totalVideoQtyCount;
-                        else return 0;
-
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-
-            return totalVideoQtyCount;
-        }
-
         public DataTable RetrieveSpecific(VideoModel vm)
         {
             DataTable dt = new DataTable();
@@ -94,73 +65,6 @@ namespace iccBvsProject1.Controllers
             }
 
             return dt;
-        }
-
-        public int RetrieveSpecificQty(string video_id)
-        {
-            int currentQuantity = 0;
-
-            try
-            {
-                // 7. SQL Introduction
-                // Context #8: SQL Select Statement
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-
-                    using (SqlCommand cmd = new SqlCommand("SELECT in_qty FROM Video WHERE video_id = @SearchValue", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@SearchValue", video_id);
-                        object result = cmd.ExecuteScalar();
-                        if (result != null && int.TryParse(result.ToString(), out currentQuantity)) return currentQuantity;
-                        else return 0;
-
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-
-            return currentQuantity;
-        }
-
-        public List<Models.VideoTitleComboBoxItem> RetrieveAllTitles()
-        {
-            var list = new List<Models.VideoTitleComboBoxItem>();
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-                    // 7. SQL Introduction
-                    // Context #8: SQL Select Statement
-                    using (SqlCommand cmd = new SqlCommand("SELECT video_id, title, format, rent_limit, price, in_qty FROM Video WHERE in_qty > 0 ORDER BY title", conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string id = reader["video_id"].ToString();
-                                string title = reader["title"].ToString();
-                                int rentLimit = Convert.ToInt32(reader["rent_limit"].ToString());
-                                int price = Convert.ToInt32(reader["price"].ToString());
-                                string format = reader["format"].ToString();
-
-                                list.Add(new Models.VideoTitleComboBoxItem(id, title, rentLimit, price, format));
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-
-            return list;
         }
         
         public void Create(VideoModel vm)
@@ -277,57 +181,6 @@ namespace iccBvsProject1.Controllers
             }
         }
 
-        public void RentQty(string video_id)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-                    // 7. SQL Introduction
-                    // Context #10: SQL Update Statement (multiple)
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET in_qty = in_qty - 1, out_qty = out_qty + 1 WHERE video_id = @Id", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Id", video_id);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0) MessageBox.Show("Success");
-                        else MessageBox.Show("Failed");
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-        }
-
-        public void ReturnQty(string video_id)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(DbConfig.ConnectionString))
-                {
-                    conn.Open();
-                    // 7. SQL Introduction
-                    // Context #10: SQL Update Statement (multiple)
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Video SET in_qty = in_qty + 1, out_qty = out_qty - 1 WHERE video_id = @Id", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Id", video_id);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0) MessageBox.Show("Success");
-                        else MessageBox.Show("Failed");
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-        }
 
         public void Delete(VideoModel vm)
         {

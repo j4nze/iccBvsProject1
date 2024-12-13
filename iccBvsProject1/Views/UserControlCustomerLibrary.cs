@@ -26,8 +26,19 @@ namespace iccBvsProject1.Views
 
             comboBoxSearchBy.SelectedIndex = 0;
 
+            LoadList();
+        }
+
+        public void LoadList()
+        {
             dt = cc.RetrieveAll();
             dataGridViewCustomerLibrary.DataSource = dt;
+
+            dataGridViewCustomerLibrary.Columns["customer_id"].HeaderText = "Customer ID";
+            dataGridViewCustomerLibrary.Columns["name"].HeaderText = "Name";
+            dataGridViewCustomerLibrary.Columns["mobile"].HeaderText = "Mobile #";
+            dataGridViewCustomerLibrary.Columns["email"].HeaderText = "Email";
+            dataGridViewCustomerLibrary.Columns["address"].HeaderText = "Address";
         }
 
         private void dataGridViewCustomerLibrary_SelectionChanged(object sender, EventArgs e)

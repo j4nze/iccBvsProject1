@@ -35,6 +35,7 @@ namespace iccBvsProject1
             ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
             ucDashboard.Visible = false;
+            ucReports.Visible = false;
         }
 
         private void HideAllUserControls()
@@ -43,6 +44,7 @@ namespace iccBvsProject1
             ucCustomerLibrary.Visible = false;
             ucRental.Visible = false;
             ucDashboard.Visible = false;
+            ucReports.Visible = false;
         }
 
         private void ShowUserControl(UserControl uc)
@@ -51,21 +53,10 @@ namespace iccBvsProject1
             uc.Visible = true;   
         }
 
-        private void buttonLibrary_Click(object sender, EventArgs e)
+        private void buttonDashboard_Click(object sender, EventArgs e)
         {
-            contextMenuStripLibrary.Show(buttonLibrary, new Point(buttonLibrary.Width, 0));
-        }
-
-        private void videoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowUserControl(ucVideoLibrary);
-            labelSectionHeader.Text = "Video Library";
-        }
-
-        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowUserControl(ucCustomerLibrary);
-            labelSectionHeader.Text = "Customer Library";
+            ShowUserControl(ucDashboard);
+            labelSectionHeader.Text = "Dashboard";
         }
 
         private void buttonRental_Click(object sender, EventArgs e)
@@ -74,10 +65,22 @@ namespace iccBvsProject1
             labelSectionHeader.Text = "Rental Records";
         }
 
-        private void buttonDashboard_Click(object sender, EventArgs e)
+        private void buttonVideoLibrary_Click(object sender, EventArgs e)
         {
-            ShowUserControl(ucDashboard);
-            labelSectionHeader.Text = "Dashboard";
+            ShowUserControl(ucVideoLibrary);
+            labelSectionHeader.Text = "Video Library";
+        }
+
+        private void buttonCustomerLibrary_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(ucCustomerLibrary);
+            labelSectionHeader.Text = "Customer Library";
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(ucReports);
+            labelSectionHeader.Text = "Reports";
         }
     }
 }

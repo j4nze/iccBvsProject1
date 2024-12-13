@@ -14,43 +14,46 @@ namespace iccBvsProject1.Views
 {
     public partial class UserControlDashboard : UserControl
     {
-        private VideoController vc = new VideoController();
-        private RentController rc = new RentController();
+        private DashboardController dc = new DashboardController();
         private DataTable dt;
         public UserControlDashboard()
         {
             InitializeComponent();
 
             LoadSummary();
+            LoadOverduedRentals();
+            LoadLowStockAvailableVideos();
         }
 
         public void LoadSummary()
         {
-            labelTotalRent.Text = rc.RetrieveAllRentCount().ToString();
-            labelTotalVideo.Text = vc.RetrieveAllVideoCount().ToString();
-            labelTotalReturnProfit.Text = "₱ " + rc.RetrieveTotalReturnRevenue().ToString();
+            labelTotalRent.Text = dc.RetrieveAllRentCount().ToString();
+            labelTotalOverduedRent.Text = dc.RetrieveOverdueRentCount().ToString();
+            labelTotalVideo.Text = dc.RetrieveAllAvailableVideoCount().ToString();
+            labelTotalReturnProfit.Text = "₱ " + dc.RetrieveTotalReturnRevenue().ToString();
+            
+        }
+        
+        public void LoadOverduedRentals()
+        {
+            dt = dc.RetrieveAllOverduedRent();
+            dataGridViewOverduedRentals.DataSource = dt;
 
-            dt = rc.RetrieveAllRent();
-            dataGridViewRent.DataSource = dt;
-
-            labelTotalOverduedRent.Text = CountOverdueRentals(dt).ToString();
+            dataGridViewOverduedRentals.Columns["rent_id"].HeaderText = "Rent ID";
+            dataGridViewOverduedRentals.Columns["rental_date"].HeaderText = "Rental Date";
+            dataGridViewOverduedRentals.Columns["expected_return_date"].HeaderText = "Expected Return Date";
         }
 
-        private int CountOverdueRentals(DataTable rentalData)
+        public void LoadLowStockAvailableVideos()
         {
-            DateTime currentDate = DateTime.Now;
-            int overdueCount = 0;
+            dt = dc.RetrieveAllLowStockAvaibleVideos();
+            dataGridViewLowStockVideos.DataSource = dt;
 
-            foreach (DataRow row in rentalData.Rows)
-            {
-                if (row["expected_return_date"] != DBNull.Value)
-                {
-                    DateTime expectedReturnDate = Convert.ToDateTime(row["expected_return_date"]);
-                    if (expectedReturnDate < currentDate) overdueCount++;
-                }
-            }
-
-            return overdueCount;
+            dataGridViewLowStockVideos.Columns["video_id"].HeaderText = "Video ID";
+            dataGridViewLowStockVideos.Columns["title"].HeaderText = "Title";
+            dataGridViewLowStockVideos.Columns["in_qty"].HeaderText = "In (Qty)";
+            dataGridViewLowStockVideos.Columns["out_qty"].HeaderText = "Out (Qty)";
+            dataGridViewLowStockVideos.Columns["total_qty"].HeaderText = "Total (Qty)";
         }
     }
 }

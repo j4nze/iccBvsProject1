@@ -37,6 +37,18 @@ namespace iccBvsProject1.Views
         {
             dt = vc.RetrieveAll();
             dataGridViewVideoLibrary.DataSource = dt;
+
+            dataGridViewVideoLibrary.Columns["video_id"].HeaderText = "Video ID";
+            dataGridViewVideoLibrary.Columns["title"].HeaderText = "Title";
+            dataGridViewVideoLibrary.Columns["director"].HeaderText = "Director";
+            dataGridViewVideoLibrary.Columns["release_date"].HeaderText = "Release Date";
+            dataGridViewVideoLibrary.Columns["rent_limit"].HeaderText = "Rent Limit";
+            dataGridViewVideoLibrary.Columns["price"].HeaderText = "Price";
+            dataGridViewVideoLibrary.Columns["format"].HeaderText = "Format";
+            dataGridViewVideoLibrary.Columns["total_qty"].HeaderText = "Total (Qty)";
+            dataGridViewVideoLibrary.Columns["in_qty"].HeaderText = "In (Qty)";
+            dataGridViewVideoLibrary.Columns["out_qty"].HeaderText = "Out (Qty)";
+            dataGridViewVideoLibrary.Columns["synopsis"].HeaderText = "Synopsis";
         }
         
         private void dataGridViewVideoLibrary_SelectionChanged(object sender, EventArgs e)
@@ -115,6 +127,7 @@ namespace iccBvsProject1.Views
 
             UCR.LoadVideoCombobox();
             UCD.LoadSummary();
+            UCD.LoadLowStockAvailableVideos();
         }
 
         private void buttonSubmitStockQtyOperation_Click(object sender, EventArgs e)
@@ -131,6 +144,8 @@ namespace iccBvsProject1.Views
             LoadList();
 
             UCR.LoadVideoCombobox();
+            UCD.LoadSummary();
+            UCD.LoadLowStockAvailableVideos();
         }
 
         private void buttonVideoUpdateRecord_Click(object sender, EventArgs e)
@@ -151,6 +166,7 @@ namespace iccBvsProject1.Views
 
             UCR.LoadVideoCombobox();
             UCR.LoadList();
+            UCD.LoadLowStockAvailableVideos();
         }
 
 
@@ -164,6 +180,7 @@ namespace iccBvsProject1.Views
 
             UCR.LoadVideoCombobox();
             UCD.LoadSummary();
+            UCD.LoadLowStockAvailableVideos();
         }
     }
 }

@@ -20,8 +20,6 @@ namespace iccBvsProject1.Views
         public UserControlDashboard UCD { get; set; }
         private RentModel rm = new RentModel();
         private VideoModel vm = new VideoModel();
-        private CustomerController cc = new CustomerController();
-        private VideoController vc = new VideoController();
         private RentController rc = new RentController();
         private DataTable dt;
 
@@ -45,12 +43,38 @@ namespace iccBvsProject1.Views
         public void LoadList()
         {
             dt = rc.RetrieveAll();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row["return_date"] != DBNull.Value && Convert.ToDateTime(row["return_date"]) == new DateTime(1900, 1, 1))
+                {
+                    row["return_date"] = DBNull.Value; 
+                }
+            }
+
             dataGridViewRental.DataSource = dt;
+
+            dataGridViewRental.Columns["rent_id"].HeaderText = "Rent ID";
+            dataGridViewRental.Columns["status"].HeaderText = "Status";
+            dataGridViewRental.Columns["customer_id"].HeaderText = "Customer ID";
+            dataGridViewRental.Columns["name"].HeaderText = "Name";
+            dataGridViewRental.Columns["video_id"].HeaderText = "Video ID";
+            dataGridViewRental.Columns["title"].HeaderText = "Title";
+            dataGridViewRental.Columns["price"].HeaderText = "Price";
+            dataGridViewRental.Columns["rental_date"].HeaderText = "Rental Date";
+            dataGridViewRental.Columns["expected_return_date"].HeaderText = "Expected Return Date";
+            dataGridViewRental.Columns["return_date"].HeaderText = "Return Date";
+            dataGridViewRental.Columns["overdue_days"].HeaderText = "Overdue Day/s";
+            dataGridViewRental.Columns["overdue_price"].HeaderText = "Overdue Price";
+            dataGridViewRental.Columns["total_price"].HeaderText = "Total Price";
+            dataGridViewRental.Columns["format"].HeaderText = "Format";
+            dataGridViewRental.Columns["rent_limit"].HeaderText = "Rent Limit";
+            dataGridViewRental.Columns["notes"].HeaderText = "Notes";
         }
 
         public void LoadCustomerCombobox()
         {
-            var list = cc.RetrieveAllNames();
+            var list = rc.RetrieveAllNames();
 
             comboBoxCustomerName.DisplayMember = "Name";
             comboBoxCustomerName.Items.Clear();
@@ -63,7 +87,7 @@ namespace iccBvsProject1.Views
 
         public void LoadVideoCombobox()
         {
-            var list = vc.RetrieveAllTitles();
+            var list = rc.RetrieveAllTitles();
 
             comboBoxVideoTitle.DisplayMember = "Title";
             comboBoxVideoTitle.Items.Clear();
@@ -137,22 +161,18 @@ namespace iccBvsProject1.Views
         {
             rm.Id = Nanoid.Generate(size: 10);
             rm.RentalDate = dateTimePickerRentalDate.Value;
-            rm.ReturnDate = dateTimePickerReturnDate.Value;
+            rm.ExpectedReturnDate = dateTimePickerReturnDate.Value;
             rm.OverdueDays = 0;
             rm.OverduePrice = 0;
-            rm.TotalPrice = (int)numericUpDownTotalPrice.Value;
+            rm.TotalPrice = (int)numericUpDownRentPrice.Value;
             rm.Status = "RENTED";
             rm.Notes = textBoxNotes.Text;
             rm.VideoId = textBoxVideoId.Text;
             rm.CustomerId = textBoxCustomerId.Text;
 
-            int currentQuantity = vc.RetrieveSpecificQty(textBoxVideoId.Text);
+            int currentQuantity = rc.RetrieveSpecificQty(textBoxVideoId.Text);
 
-            if (currentQuantity >= 1)
-            {
-                vc.RentQty(textBoxVideoId.Text);
-                rc.Create(rm);
-            }
+            if (currentQuantity >= 1) rc.Create(rm, textBoxVideoId.Text);
             else MessageBox.Show("The current quantity of this video is 0");
 
             dt.Clear();
@@ -161,6 +181,8 @@ namespace iccBvsProject1.Views
 
             UCV.LoadList();
             UCD.LoadSummary();
+            UCD.LoadOverduedRentals();
+            UCD.LoadLowStockAvailableVideos();
         }
 
         private void buttonRetrieveSpecific_Click(object sender, EventArgs e)
@@ -184,9 +206,9 @@ namespace iccBvsProject1.Views
         {
             rm.Id = textBoxRentalId.Text;
             rm.Status = "RETURNED";
+            rm.ReturnDate = DateTime.Now;
 
-            vc.ReturnQty(textBoxVideoId.Text);
-            rc.Update(rm);
+            rc.Update(rm, textBoxVideoId.Text);
 
             dt.Clear();
             dt = rc.RetrieveAll();
@@ -194,6 +216,8 @@ namespace iccBvsProject1.Views
 
             UCV.LoadList();
             UCD.LoadSummary();
+            UCD.LoadOverduedRentals();
+            UCD.LoadLowStockAvailableVideos();
         }
 
         private void CheckOverdue()
